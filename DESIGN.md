@@ -174,7 +174,7 @@ A near-monochrome paper-and-ink palette with a single deep blue, plus a validate
 - **Title** (650, 1.6rem, 1.2): prose h2. Prose h3 is 1.25rem/1.3; prose h4 drops to sans 650 1rem.
 - **Feed Title** (640, 1.3125rem, 1.25): one headline per feed row.
 - **Dek** (400, clamp 1.2-1.375rem, 1.45, ink 2): standfirst under titles; the home lead uses 1.25rem/1.5.
-- **Body** (400, 1.1875rem, 1.65): prose at the 42.5rem measure (about 68ch).
+- **Body** (400, 1.1875rem, 1.65; 1.25rem from 64rem viewports): prose at the measure (42.5rem on phones and tablets, 48rem from 64rem, 54rem from 100rem).
 - **UI** (sans 500, 0.9375rem, 1): navigation, "Read"/"Download" action links, contact links.
 - **Label** (sans 400, 0.875rem, 1.5, muted, tabular): meta lines, dates, topic row; 0.8125rem in feed rows.
 - **Table** (sans 400, 0.875rem, 1.45, tabular + lining figures): all tables.
@@ -189,7 +189,7 @@ A near-monochrome paper-and-ink palette with a single deep blue, plus a validate
 
 ## Layout
 
-A single centred reading column: the measure is 42.5rem with a fluid gutter of clamp(1rem, 4vw, 2.5rem) each side. Article pages use a three-column grid (1fr, measure, 1fr) so the "On this page" contents rail can sit in the left margin at 13rem, sticky, from 78rem viewport width, and only when a piece has at least three h2s. Below that it is hidden; nothing else enters the margins.
+A single centred reading column: the measure is 42.5rem, widening to 48rem from 64rem viewports and 54rem from 100rem (the owner asked for a wider desktop column), with a fluid gutter of clamp(1rem, 4vw, 2.5rem) each side. Article pages use a three-column grid (1fr, measure, 1fr). From 90rem the "On this page" rail (13rem, sticky, only with at least three h2s) sits in the left margin and the Key data panel (17rem, sticky) in the right. Below 90rem the rail is hidden and Key data sits inline above the text, its list and estimates table side by side from 40rem and stacked on phones.
 
 The header is a slim 4.5rem bar (mark and wordmark left, "Topics" and "About" right) above a hairline. The home page runs a short sans intro, the lead piece as a large serif headline with dek and meta above a hairline, then the feed grouped by year: each year is a sans label over an ink rule, each piece a ruled row with a 5.5rem date column and a 1.5rem gap. The footer sits 6rem below content behind a hairline.
 
@@ -250,7 +250,7 @@ One ease-out curve, cubic-bezier(0.23, 1, 0.32, 1), at 120-200ms for state chang
 ## Do's and Don'ts
 
 ### Do:
-- **Do** set reading text in the serif at 1.1875rem/1.65 inside the 42.5rem measure.
+- **Do** set reading text in the serif at 1.1875rem/1.65 (1.25rem on desktop) inside the measure.
 - **Do** set every number in tabular figures, and right-align numeric table columns.
 - **Do** separate content with 1px hairlines (`rule`) and reserve the ink rule for headers, totals and year dividers.
 - **Do** caption every chart, data table and figure as a numbered "Exhibit N" in the shared sequence, with a source line where the data has one.

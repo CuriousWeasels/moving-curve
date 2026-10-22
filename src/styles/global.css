@@ -38,6 +38,15 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* Wider column on desktop; body text steps up a touch so long lines stay comfortable. */
+@media (min-width: 64rem) {
+  :root { --measure: 48rem; }
+  body { font-size: 1.25rem; }
+}
+@media (min-width: 100rem) {
+  :root { --measure: 54rem; }
+}
+
 /* ---------- base ---------- */
 *,
 *::before,
@@ -284,7 +293,7 @@ main { flex: 1; }
 }
 .article-layout > * { grid-column: 2; }
 .toc { display: none; }
-@media (min-width: 78rem) {
+@media (min-width: 90rem) {
   .toc {
     display: block; grid-column: 1; grid-row: 1 / span 2; justify-self: end;
     width: 13rem; position: sticky; top: 2rem; align-self: start;
@@ -507,7 +516,13 @@ main { flex: 1; }
 .key-data .num { text-align: right; }
 .key-data tr.sub th, .key-data tr.sub td { color: var(--muted); }
 .key-data tr.sub th { padding-left: 0.6rem; }
-@media (min-width: 78rem) {
+/* Inline (no side margins yet): data list and estimates table side by side. */
+@media (min-width: 40rem) and (max-width: 89.99rem) {
+  .key-data { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2.5rem; align-items: start; }
+  .key-data > h2, .key-data dl { grid-column: 1; }
+  .key-data .key-table { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; }
+}
+@media (min-width: 90rem) {
   .key-data {
     grid-column: 3; grid-row: 1 / span 2; justify-self: start; align-self: start;
     width: 17rem; position: sticky; top: 2rem; margin-top: 2.6rem;
