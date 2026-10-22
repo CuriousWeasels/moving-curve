@@ -55,7 +55,7 @@ The three pieces in `src/content/pieces/` are samples that show each feature. De
 
 The code lives at [github.com/CuriousWeasels/moving-curve](https://github.com/CuriousWeasels/moving-curve). Every push to `main`, including every save from the online admin panel, runs `.github/workflows/deploy.yml`, which builds the site and publishes it on **GitHub Pages** (free). Progress shows under the repository's **Actions** tab; a publish takes about a minute.
 
-Until a custom domain is set, the site lives at <https://curiousweasels.github.io/moving-curve/>.
+The site lives at <https://movingcurve.online> (domain registered at Cloudflare, DNS pointed at GitHub Pages).
 
 ### Pointing your Cloudflare domain at it
 

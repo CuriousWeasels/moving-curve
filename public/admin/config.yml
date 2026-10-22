@@ -18,8 +18,8 @@ backend:
 media_folder: public/files
 public_folder: /files
 
-site_url: https://curiousweasels.github.io/moving-curve
-display_url: https://curiousweasels.github.io/moving-curve
+site_url: https://movingcurve.online
+display_url: https://movingcurve.online
 logo_url: ../favicon.svg
 
 output:

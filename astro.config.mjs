@@ -6,7 +6,7 @@ import { remarkExhibits, rehypeTables } from './src/lib/exhibits.mjs';
 
 export default defineConfig({
   // Set by the deploy workflow: the custom domain, or the GitHub Pages project URL.
-  site: process.env.SITE_URL || 'https://movingcurve.example',
+  site: process.env.SITE_URL || 'https://movingcurve.online',
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
