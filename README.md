@@ -57,27 +57,22 @@ The code lives at [github.com/CuriousWeasels/moving-curve](https://github.com/Cu
 
 Until a custom domain is set, the site lives at <https://curiousweasels.github.io/moving-curve/>.
 
-### Pointing your IONOS domain at it
+### Pointing your Cloudflare domain at it
 
-Replace `yourdomain.com` below with your domain.
+The domain is registered at Cloudflare, so its DNS is managed there. Replace `yourdomain.com` below with your domain.
 
-**1. DNS at IONOS.** Sign in at ionos.com → **Menu → Domains & SSL** → click the domain → **DNS**. Remove any existing **A**, **AAAA** or **CNAME** records on `@` (and on `www`) that point somewhere else, such as the default IONOS parking page or your VPS. Keep MX/TXT email records. Then add:
+**1. DNS at Cloudflare.** Sign in at dash.cloudflare.com → click the domain → **DNS → Records**. Delete any existing **A**, **AAAA** or **CNAME** records on the root (`@` / `yourdomain.com`) and on `www` that point somewhere else. Keep MX/TXT email records. Then **Add record** for each row, with **Proxy status set to “DNS only” (grey cloud)**:
 
-| Type | Host name | Points to |
-| --- | --- | --- |
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| AAAA | @ | 2606:50c0:8000::153 |
-| AAAA | @ | 2606:50c0:8001::153 |
-| AAAA | @ | 2606:50c0:8002::153 |
-| AAAA | @ | 2606:50c0:8003::153 |
-| CNAME | www | curiousweasels.github.io |
+| Type | Name | Content | Proxy |
+| --- | --- | --- | --- |
+| CNAME | @ | curiousweasels.github.io | DNS only |
+| CNAME | www | curiousweasels.github.io | DNS only |
 
-Using a subdomain instead (e.g. `blog.yourdomain.com`)? Add only one record: **CNAME**, host `blog`, pointing to `curiousweasels.github.io`.
+Cloudflare allows a CNAME on the root domain (it “flattens” it), so these two records are all you need. Using a subdomain instead (e.g. `blog.yourdomain.com`)? Add just one record: **CNAME**, name `blog`, content `curiousweasels.github.io`, DNS only.
 
-**2. Tell GitHub.** Repository → **Settings → Pages → Custom domain** → enter `yourdomain.com` → **Save**. Once the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
+Why grey cloud: GitHub has to see your domain directly to issue its free HTTPS certificate. Once HTTPS works (step 2), you can switch the records to **Proxied** (orange cloud) for Cloudflare's CDN; if you do, set **SSL/TLS → Overview → Full** first, or the site will loop on redirects.
+
+**2. Tell GitHub.** Repository → **Settings → Pages → Custom domain** → enter `yourdomain.com` → **Save**. Once the DNS check passes (usually minutes), tick **Enforce HTTPS**.
 
 **3. Tell the build.** Repository → **Settings → Secrets and variables → Actions → Variables → New repository variable**: name `CUSTOM_DOMAIN`, value `yourdomain.com`. Then **Actions → Deploy to GitHub Pages → Run workflow**. The site now builds for your domain's root.
 
