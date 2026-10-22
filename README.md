@@ -43,9 +43,9 @@ Year, Revenue
 
 Waterfall: one value column. The first row is the starting bar; a row whose label starts with `=` (value left blank) shows the running total, e.g. `= Equity value,`.
 
-## Replace the samples
+## Before you share it
 
-The three pieces in `src/content/pieces/` are samples that show each feature. Delete them in the admin panel once you have your own. Also update:
+Keep these up to date:
 
 - **Settings → Site settings**: contact email, LinkedIn, disclaimer.
 - **Pages → About**: your bio.
