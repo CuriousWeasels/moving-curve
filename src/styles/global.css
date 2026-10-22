@@ -38,35 +38,6 @@
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg: #111315;
-    --bg-2: #181b1e;
-    --ink: #eceef0;
-    --ink-2: #b8bdc4;
-    --muted: #8e959e;
-    --rule: #262a2f;
-    --rule-2: #353a40;
-    --accent: #4a8ae6; /* same blue as the primary chart series (5.4:1 on --bg) */
-    --accent-ink: #a7c9f8;
-    --accent-wash: #1b2a40;
-    --select: #24426e;
-
-    --s1: #4a8ae6;
-    --s2: #d9602c;
-    --s3: #1fa575;
-    --s4: #c98500;
-    --s5: #d55181;
-    --s6: #008300;
-    --s7: #9085e9;
-    --s8: #e66767;
-    --wf-up: #4a8ae6;
-    --wf-down: #d9602c;
-    --wf-total: #8e959e;
-  }
-}
-
 /* ---------- base ---------- */
 *,
 *::before,

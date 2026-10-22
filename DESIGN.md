@@ -18,21 +18,6 @@ colors:
   series-4-ochre: "#d39200"
   series-5-magenta: "#c9577f"
   waterfall-total: "#5b6169"
-  dark-paper: "#111315"
-  dark-paper-2: "#181b1e"
-  dark-ink: "#eceef0"
-  dark-ink-2: "#b8bdc4"
-  dark-muted: "#8e959e"
-  dark-rule: "#262a2f"
-  dark-rule-2: "#353a40"
-  dark-ledger-blue: "#4a8ae6"
-  dark-ledger-blue-light: "#a7c9f8"
-  dark-ledger-wash: "#1b2a40"
-  dark-selection: "#24426e"
-  dark-series-2-copper: "#d9602c"
-  dark-series-3-aqua: "#1fa575"
-  dark-series-4-ochre: "#c98500"
-  dark-series-5-magenta: "#d55181"
 typography:
   display:
     fontFamily: "'Source Serif 4 Variable', 'Source Serif Pro', Georgia, serif"
@@ -139,7 +124,7 @@ components:
 
 Moving Curve is the independent single-author finance newsletter played straight, at the craft level of the Collaborative Fund blog and Net Interest. It does not wear a costume; it earns distinction through typographic precision. A serif reading face carries titles and body at a real measure; a workhorse sans carries everything that is apparatus (meta, navigation, tables, chart text, captions). Numbers are always tabular.
 
-The page is white paper, near-black ink, hairline rules and one deep blue. That blue is both the link colour and the first chart series, so the reader learns one signal: blue is the author's line of argument, in prose and in data. Structure is drawn with rules, never with boxes: the feed is ruled rows, the model attachment is a ruled row, tables are ruled ledgers, the contents rail is a single left rule. Light and dark themes are the same system remapped through the same tokens.
+The page is white paper, near-black ink, hairline rules and one deep blue. That blue is both the link colour and the first chart series, so the reader learns one signal: blue is the author's line of argument, in prose and in data. Structure is drawn with rules, never with boxes: the feed is ruled rows, the model attachment is a ruled row, tables are ruled ledgers, the contents rail is a single left rule. The site is light only: white paper for every reader, whatever their device setting.
 
 Charts, pasted tables, captioned images and captioned Markdown tables are one family: numbered exhibits with a single caption style, a source line, and accessible data behind every chart. The confirmed rejection is the off-the-shelf blog theme: stock card grids, hero banners, Medium-style chrome.
 
@@ -148,27 +133,27 @@ Charts, pasted tables, captioned images and captioned Markdown tables are one fa
 - One accent (ledger blue) shared by links and chart series 1.
 - Hairline rules instead of cards; flat surfaces; no shadows at rest.
 - Every chart, table and figure is a numbered "Exhibit N" in one shared sequence.
-- Light and dark from one token set, via `prefers-color-scheme`.
+- Light only. The owner chose a white background for every visitor, so there is no dark theme.
 
 ## Colors
 
 A near-monochrome paper-and-ink palette with a single deep blue, plus a validated categorical series for data.
 
 ### Primary
-- **Ledger Blue** (light `ledger-blue`, dark `dark-ledger-blue`): links, the curve mark's dot, the model icon, focus rings, and chart series 1. In dark mode it is the same blue as the dark chart series 1 (5.4:1 on dark paper).
-- **Ledger Blue Deep** (light `ledger-blue-deep`, dark `dark-ledger-blue-light`): link and headline-link hover; the "pressed further" state of the accent.
-- **Ledger Wash / Selection** (`ledger-wash`, `selection` and dark equivalents): text selection and quiet accent tint only; never a panel fill.
+- **Ledger Blue** (`ledger-blue`): links, the curve mark's dot, the model icon, focus rings, and chart series 1.
+- **Ledger Blue Deep** (`ledger-blue-deep`): link and headline-link hover; the "pressed further" state of the accent.
+- **Ledger Wash / Selection** (`ledger-wash`, `selection`): text selection and quiet accent tint only; never a panel fill.
 
 ### Secondary (data only)
-- **Copper** (`series-2-copper`), **Aqua** (`series-3-aqua`), **Ochre** (`series-4-ochre`), **Magenta** (`series-5-magenta`): chart series 2-5, in that order, with dark-mode equivalents. Slots 6-8 (green `#008300`, violet `#6250d6` / `#9085e9`, red `#e34948` / `#e66767`) exist as overflow; red also outlines exhibit errors. Waterfalls map increase to series 1, decrease to copper, totals to **Waterfall Grey** (`waterfall-total`; dark uses `dark-muted`).
+- **Copper** (`series-2-copper`), **Aqua** (`series-3-aqua`), **Ochre** (`series-4-ochre`), **Magenta** (`series-5-magenta`): chart series 2-5, in that order. Slots 6-8 (green `#008300`, violet `#6250d6`, red `#e34948`) exist as overflow; red also outlines exhibit errors. Waterfalls map increase to series 1, decrease to copper, totals to **Waterfall Grey** (`waterfall-total`).
 
 ### Neutral
-- **Paper** (`paper` / `dark-paper`): page ground.
-- **Paper 2** (`paper-2` / `dark-paper-2`): code blocks, inline code and table-row hover only.
-- **Ink** (`ink` / `dark-ink`): titles, body, strong rules (table head, total row, year divider, blockquote bar, active nav underline).
-- **Ink 2** (`ink-2` / `dark-ink-2`): deks, feed summaries, nav at rest, tag links, legend text.
-- **Muted** (`muted` / `dark-muted`): dates, meta, captions, sources, ticks, list markers.
-- **Rule** (`rule` / `dark-rule`): the hairline that structures everything. **Rule 2** (`rule-2` / `dark-rule-2`): meta separators, chart hover guide, scrollbar.
+- **Paper** (`paper`): page ground.
+- **Paper 2** (`paper-2`): code blocks, inline code and table-row hover only.
+- **Ink** (`ink`): titles, body, strong rules (table head, total row, year divider, blockquote bar, active nav underline).
+- **Ink 2** (`ink-2`): deks, feed summaries, nav at rest, tag links, legend text.
+- **Muted** (`muted`): dates, meta, captions, sources, ticks, list markers.
+- **Rule** (`rule`): the hairline that structures everything. **Rule 2** (`rule-2`): meta separators, chart hover guide, scrollbar.
 
 ### Named Rules
 **The One Blue Rule.** Ledger blue is the only accent in the interface. It marks links, the mark's dot, focus, and chart series 1; it never fills a surface or a button.
@@ -272,7 +257,7 @@ One ease-out curve, cubic-bezier(0.23, 1, 0.32, 1), at 120-200ms for state chang
 - **Do** use chart slots in their fixed order, with slot 1 equal to the link accent in each scheme.
 - **Do** give any chart with two or more series a legend, and add direct end labels on wide line charts only when they do not collide.
 - **Do** give every chart a text label and a "View data" table.
-- **Do** keep light and dark in step by changing tokens, never by adding per-theme components.
+- **Don't** add a dark theme back without the owner asking; the white page is a deliberate choice.
 
 ### Don't:
 - **Don't** use cards, panels or tiles to group content; use a ruled row.

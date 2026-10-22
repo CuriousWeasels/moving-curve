@@ -259,246 +259,6 @@
           "oklch(83.6% 0.015 255.6)",
           "oklch(95% 0.015 255.6)"
         ]
-      },
-      "dark-paper": {
-        "role": "neutral",
-        "displayName": "Dark Paper",
-        "canonical": "#111315",
-        "oklch": "oklch(18.5% 0.005 248.1)",
-        "tonalRamp": [
-          "oklch(15% 0.005 248.1)",
-          "oklch(26.4% 0.005 248.1)",
-          "oklch(37.9% 0.005 248.1)",
-          "oklch(49.3% 0.005 248.1)",
-          "oklch(60.7% 0.005 248.1)",
-          "oklch(72.1% 0.005 248.1)",
-          "oklch(83.6% 0.005 248.1)",
-          "oklch(95% 0.005 248.1)"
-        ]
-      },
-      "dark-paper-2": {
-        "role": "neutral",
-        "displayName": "Dark Paper 2",
-        "canonical": "#181b1e",
-        "oklch": "oklch(22% 0.007 248.2)",
-        "tonalRamp": [
-          "oklch(15% 0.007 248.2)",
-          "oklch(26.4% 0.007 248.2)",
-          "oklch(37.9% 0.007 248.2)",
-          "oklch(49.3% 0.007 248.2)",
-          "oklch(60.7% 0.007 248.2)",
-          "oklch(72.1% 0.007 248.2)",
-          "oklch(83.6% 0.007 248.2)",
-          "oklch(95% 0.007 248.2)"
-        ]
-      },
-      "dark-ink": {
-        "role": "neutral",
-        "displayName": "Dark Ink",
-        "canonical": "#eceef0",
-        "oklch": "oklch(94.8% 0.003 247.9)",
-        "tonalRamp": [
-          "oklch(15% 0.003 247.9)",
-          "oklch(26.4% 0.003 247.9)",
-          "oklch(37.9% 0.003 247.9)",
-          "oklch(49.3% 0.003 247.9)",
-          "oklch(60.7% 0.003 247.9)",
-          "oklch(72.1% 0.003 247.9)",
-          "oklch(83.6% 0.003 247.9)",
-          "oklch(95% 0.003 247.9)"
-        ]
-      },
-      "dark-ink-2": {
-        "role": "neutral",
-        "displayName": "Dark Ink 2",
-        "canonical": "#b8bdc4",
-        "oklch": "oklch(79.7% 0.011 256.7)",
-        "tonalRamp": [
-          "oklch(15% 0.011 256.7)",
-          "oklch(26.4% 0.011 256.7)",
-          "oklch(37.9% 0.011 256.7)",
-          "oklch(49.3% 0.011 256.7)",
-          "oklch(60.7% 0.011 256.7)",
-          "oklch(72.1% 0.011 256.7)",
-          "oklch(83.6% 0.011 256.7)",
-          "oklch(95% 0.011 256.7)"
-        ]
-      },
-      "dark-muted": {
-        "role": "neutral",
-        "displayName": "Dark Muted",
-        "canonical": "#8e959e",
-        "oklch": "oklch(66.7% 0.016 254.6)",
-        "tonalRamp": [
-          "oklch(15% 0.016 254.6)",
-          "oklch(26.4% 0.016 254.6)",
-          "oklch(37.9% 0.016 254.6)",
-          "oklch(49.3% 0.016 254.6)",
-          "oklch(60.7% 0.016 254.6)",
-          "oklch(72.1% 0.016 254.6)",
-          "oklch(83.6% 0.016 254.6)",
-          "oklch(95% 0.016 254.6)"
-        ]
-      },
-      "dark-rule": {
-        "role": "neutral",
-        "displayName": "Dark Rule",
-        "canonical": "#262a2f",
-        "oklch": "oklch(28.3% 0.011 254)",
-        "tonalRamp": [
-          "oklch(15% 0.011 254)",
-          "oklch(26.4% 0.011 254)",
-          "oklch(37.9% 0.011 254)",
-          "oklch(49.3% 0.011 254)",
-          "oklch(60.7% 0.011 254)",
-          "oklch(72.1% 0.011 254)",
-          "oklch(83.6% 0.011 254)",
-          "oklch(95% 0.011 254)"
-        ]
-      },
-      "dark-rule-2": {
-        "role": "neutral",
-        "displayName": "Dark Rule 2",
-        "canonical": "#353a40",
-        "oklch": "oklch(34.6% 0.013 253)",
-        "tonalRamp": [
-          "oklch(15% 0.013 253)",
-          "oklch(26.4% 0.013 253)",
-          "oklch(37.9% 0.013 253)",
-          "oklch(49.3% 0.013 253)",
-          "oklch(60.7% 0.013 253)",
-          "oklch(72.1% 0.013 253)",
-          "oklch(83.6% 0.013 253)",
-          "oklch(95% 0.013 253)"
-        ]
-      },
-      "dark-ledger-blue": {
-        "role": "primary",
-        "displayName": "Dark Ledger Blue",
-        "canonical": "#4a8ae6",
-        "oklch": "oklch(63.5% 0.154 257.7)",
-        "tonalRamp": [
-          "oklch(15% 0.15 257.7)",
-          "oklch(26.4% 0.15 257.7)",
-          "oklch(37.9% 0.15 257.7)",
-          "oklch(49.3% 0.15 257.7)",
-          "oklch(60.7% 0.15 257.7)",
-          "oklch(72.1% 0.15 257.7)",
-          "oklch(83.6% 0.15 257.7)",
-          "oklch(95% 0.15 257.7)"
-        ]
-      },
-      "dark-ledger-blue-light": {
-        "role": "primary",
-        "displayName": "Dark Ledger Blue Light",
-        "canonical": "#a7c9f8",
-        "oklch": "oklch(82.8% 0.076 256.6)",
-        "tonalRamp": [
-          "oklch(15% 0.076 256.6)",
-          "oklch(26.4% 0.076 256.6)",
-          "oklch(37.9% 0.076 256.6)",
-          "oklch(49.3% 0.076 256.6)",
-          "oklch(60.7% 0.076 256.6)",
-          "oklch(72.1% 0.076 256.6)",
-          "oklch(83.6% 0.076 256.6)",
-          "oklch(95% 0.076 256.6)"
-        ]
-      },
-      "dark-ledger-wash": {
-        "role": "primary",
-        "displayName": "Dark Ledger Wash",
-        "canonical": "#1b2a40",
-        "oklch": "oklch(28.3% 0.046 257.8)",
-        "tonalRamp": [
-          "oklch(15% 0.046 257.8)",
-          "oklch(26.4% 0.046 257.8)",
-          "oklch(37.9% 0.046 257.8)",
-          "oklch(49.3% 0.046 257.8)",
-          "oklch(60.7% 0.046 257.8)",
-          "oklch(72.1% 0.046 257.8)",
-          "oklch(83.6% 0.046 257.8)",
-          "oklch(95% 0.046 257.8)"
-        ]
-      },
-      "dark-selection": {
-        "role": "primary",
-        "displayName": "Dark Selection",
-        "canonical": "#24426e",
-        "oklch": "oklch(37.9% 0.084 257.9)",
-        "tonalRamp": [
-          "oklch(15% 0.084 257.9)",
-          "oklch(26.4% 0.084 257.9)",
-          "oklch(37.9% 0.084 257.9)",
-          "oklch(49.3% 0.084 257.9)",
-          "oklch(60.7% 0.084 257.9)",
-          "oklch(72.1% 0.084 257.9)",
-          "oklch(83.6% 0.084 257.9)",
-          "oklch(95% 0.084 257.9)"
-        ]
-      },
-      "dark-series-2-copper": {
-        "role": "secondary",
-        "displayName": "Dark Copper (series 2)",
-        "canonical": "#d9602c",
-        "oklch": "oklch(63.2% 0.165 41.7)",
-        "tonalRamp": [
-          "oklch(15% 0.15 41.7)",
-          "oklch(26.4% 0.15 41.7)",
-          "oklch(37.9% 0.15 41.7)",
-          "oklch(49.3% 0.15 41.7)",
-          "oklch(60.7% 0.15 41.7)",
-          "oklch(72.1% 0.15 41.7)",
-          "oklch(83.6% 0.15 41.7)",
-          "oklch(95% 0.15 41.7)"
-        ]
-      },
-      "dark-series-3-aqua": {
-        "role": "secondary",
-        "displayName": "Dark Aqua (series 3)",
-        "canonical": "#1fa575",
-        "oklch": "oklch(64.2% 0.132 162.8)",
-        "tonalRamp": [
-          "oklch(15% 0.132 162.8)",
-          "oklch(26.4% 0.132 162.8)",
-          "oklch(37.9% 0.132 162.8)",
-          "oklch(49.3% 0.132 162.8)",
-          "oklch(60.7% 0.132 162.8)",
-          "oklch(72.1% 0.132 162.8)",
-          "oklch(83.6% 0.132 162.8)",
-          "oklch(95% 0.132 162.8)"
-        ]
-      },
-      "dark-series-4-ochre": {
-        "role": "secondary",
-        "displayName": "Dark Ochre (series 4)",
-        "canonical": "#c98500",
-        "oklch": "oklch(67% 0.143 73.2)",
-        "tonalRamp": [
-          "oklch(15% 0.143 73.2)",
-          "oklch(26.4% 0.143 73.2)",
-          "oklch(37.9% 0.143 73.2)",
-          "oklch(49.3% 0.143 73.2)",
-          "oklch(60.7% 0.143 73.2)",
-          "oklch(72.1% 0.143 73.2)",
-          "oklch(83.6% 0.143 73.2)",
-          "oklch(95% 0.143 73.2)"
-        ]
-      },
-      "dark-series-5-magenta": {
-        "role": "secondary",
-        "displayName": "Dark Magenta (series 5)",
-        "canonical": "#d55181",
-        "oklch": "oklch(62.2% 0.171 0.8)",
-        "tonalRamp": [
-          "oklch(15% 0.15 0.8)",
-          "oklch(26.4% 0.15 0.8)",
-          "oklch(37.9% 0.15 0.8)",
-          "oklch(49.3% 0.15 0.8)",
-          "oklch(60.7% 0.15 0.8)",
-          "oklch(72.1% 0.15 0.8)",
-          "oklch(83.6% 0.15 0.8)",
-          "oklch(95% 0.15 0.8)"
-        ]
       }
     },
     "typographyMeta": {
@@ -703,13 +463,13 @@
   ],
   "narrative": {
     "northStar": "The Analyst's Broadsheet",
-    "overview": "Moving Curve is the independent single-author finance newsletter played straight, at the craft level of the Collaborative Fund blog and Net Interest. It does not wear a costume; it earns distinction through typographic precision. A serif reading face carries titles and body at a real measure; a workhorse sans carries everything that is apparatus (meta, navigation, tables, chart text, captions). Numbers are always tabular.\n\nThe page is white paper, near-black ink, hairline rules and one deep blue. That blue is both the link colour and the first chart series, so the reader learns one signal: blue is the author's line of argument, in prose and in data. Structure is drawn with rules, never with boxes: the feed is ruled rows, the model attachment is a ruled row, tables are ruled ledgers, the contents rail is a single left rule. Light and dark themes are the same system remapped through the same tokens.\n\nCharts, pasted tables, captioned images and captioned Markdown tables are one family: numbered exhibits with a single caption style, a source line, and accessible data behind every chart. The confirmed rejection is the off-the-shelf blog theme: stock card grids, hero banners, Medium-style chrome.",
+    "overview": "Moving Curve is the independent single-author finance newsletter played straight, at the craft level of the Collaborative Fund blog and Net Interest. It does not wear a costume; it earns distinction through typographic precision. A serif reading face carries titles and body at a real measure; a workhorse sans carries everything that is apparatus (meta, navigation, tables, chart text, captions). Numbers are always tabular.\n\nThe page is white paper, near-black ink, hairline rules and one deep blue. That blue is both the link colour and the first chart series, so the reader learns one signal: blue is the author's line of argument, in prose and in data. Structure is drawn with rules, never with boxes: the feed is ruled rows, the model attachment is a ruled row, tables are ruled ledgers, the contents rail is a single left rule. The site is light only: white paper for every reader, whatever their device setting.\n\nCharts, pasted tables, captioned images and captioned Markdown tables are one family: numbered exhibits with a single caption style, a source line, and accessible data behind every chart. The confirmed rejection is the off-the-shelf blog theme: stock card grids, hero banners, Medium-style chrome.",
     "keyCharacteristics": [
       "Serif for reading, sans for apparatus, tabular figures wherever a number appears.",
       "One accent (ledger blue) shared by links and chart series 1.",
       "Hairline rules instead of cards; flat surfaces; no shadows at rest.",
       "Every chart, table and figure is a numbered \"Exhibit N\" in one shared sequence.",
-      "Light and dark from one token set, via `prefers-color-scheme`."
+      "Light only. The owner chose a white background for every visitor, so there is no dark theme."
     ],
     "rules": [
       {
@@ -751,7 +511,7 @@
       "Do use chart slots in their fixed order, with slot 1 equal to the link accent in each scheme.",
       "Do give any chart with two or more series a legend, and add direct end labels on wide line charts only when they do not collide.",
       "Do give every chart a text label and a \"View data\" table.",
-      "Do keep light and dark in step by changing tokens, never by adding per-theme components."
+      "Don't add a dark theme back without the owner asking; the white page is a deliberate choice."
     ],
     "donts": [
       "Don't use cards, panels or tiles to group content; use a ruled row.",
