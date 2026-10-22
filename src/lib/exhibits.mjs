@@ -59,6 +59,7 @@ export function toNumber(raw) {
   if (!s || s === '-' || s === '–' || /^n\.?a\.?$/i.test(s)) return NaN;
   let neg = false;
   if (/^\(.*\)$/.test(s)) { neg = true; s = s.slice(1, -1); }
+  s = s.replace(/^[A-Z]{2,3}\s*(?=[$€£¥\d])/, ''); // currency codes: US$, CHF, HK$
   s = s.replace(/[$€£¥,%x×\s]/gi, '').replace(/[a-z]+$/i, '').replace(/^[−–]/, '-');
   const n = Number(s);
   return Number.isFinite(n) ? (neg ? -n : n) : NaN;
@@ -345,10 +346,20 @@ function svgWrap(W, H, fs, parts) {
 
 /* ---------- exhibit HTML ---------- */
 
+// "Table 2: Title" / "Figure 1. Title" keeps the author's own label instead of auto-numbering.
+const LABEL_RE = /^\s*((?:Table|Figure|Exhibit|Chart)\s+[A-Za-z0-9.]+)\s*[:.\u2013-]\s*(.*)$/i;
+export function splitLabel(text) {
+  const m = String(text ?? '').match(LABEL_RE);
+  return m ? { label: m[1], title: m[2].trim() } : null;
+}
+
 function caption(n, opts, kind) {
-  const title = opts.title ? `<span class="exhibit-title">${esc(opts.title)}</span>` : '';
+  let { title: t, label } = opts;
+  const own = !label && splitLabel(t);
+  if (own) ({ label, title: t } = own);
+  const title = t ? `<span class="exhibit-title">${esc(t)}</span>` : '';
   const sub = opts.subtitle ? `<span class="exhibit-sub">${esc(opts.subtitle)}</span>` : '';
-  return `<figcaption class="exhibit-head"><span class="exhibit-label">${kind} ${n}</span>${title}${sub}</figcaption>`;
+  return `<figcaption class="exhibit-head"><span class="exhibit-label">${esc(label || `${kind} ${n}`)}</span>${title}${sub}</figcaption>`;
 }
 
 function footer(opts) {
@@ -360,32 +371,127 @@ function footer(opts) {
 function htmlTable(rows, opts, cls = '') {
   if (!rows.length) return '';
   const [head, ...body] = rows;
-  const numCol = head.map((_, j) => j > 0 && body.some((r) => isNumeric(r[j])));
+  const numCol = head.map((_, j) => {
+    if (j === 0) return false;
+    const filled = body.map((r) => String(r[j] ?? '').trim()).filter(Boolean);
+    return filled.length > 0 && filled.filter(isNumeric).length / filled.length >= 0.6;
+  });
+  // Text-heavy tables (notes, checklists) get wider columns and scroll instead of squeezing.
+  const cellsAll = body.flatMap((r) => r.slice(1)).map((c) => String(c ?? '').trim()).filter(Boolean);
+  const avgLen = cellsAll.reduce((t, c) => t + c.length, 0) / Math.max(1, cellsAll.length);
+  if (head.length >= 4 && avgLen > 16) cls = `${cls} text-table`.trim();
   const th = head.map((h, j) => `<th scope="col"${numCol[j] ? ' class="num"' : ''}>${esc(h)}</th>`).join('');
+  // base: "8.0x | 11.1%" marks the base-case cell (row label | column header).
+  const [baseRow, baseCol] = String(opts.base ?? '').split('|').map((x) => x.trim());
   const tr = body
     .map((r) => {
-      const total = /^=/.test(r[0] ?? '');
-      const label = (r[0] ?? '').replace(/^=\s*/, '');
+      const raw = String(r[0] ?? '').trim();
+      // A row with only a label is a group heading ("Income statement", "# Precedents").
+      if (r.slice(1).every((c) => !String(c ?? '').trim()))
+        return `<tr class="group"><th scope="rowgroup" colspan="${head.length}">${esc(raw.replace(/^[#=]\s*/, ''))}</th></tr>`;
+      const total = /^=/.test(raw);
+      const sub = /^[a-z]/.test(raw);
+      const label = raw.replace(/^=\s*/, '');
       const cells = head
-        .map((_, j) => {
+        .map((h, j) => {
           const v = j === 0 ? label : r[j] ?? '';
           if (j === 0) return `<th scope="row">${esc(v)}</th>`;
-          const neg = toNumber(v) < 0;
-          return `<td class="${numCol[j] ? 'num' : ''}${neg ? ' neg' : ''}">${esc(v)}</td>`;
+          const isBase = baseRow && label === baseRow && String(h).trim() === baseCol;
+          const cls = [numCol[j] && 'num', toNumber(v) < 0 && 'neg', isBase && 'base'].filter(Boolean).join(' ');
+          return `<td${cls ? ` class="${cls}"` : ''}>${esc(v)}</td>`;
         })
         .join('');
-      return `<tr${total ? ' class="total"' : ''}>${cells}</tr>`;
+      const rc = [total && 'total', sub && 'sub'].filter(Boolean).join(' ');
+      return `<tr${rc ? ` class="${rc}"` : ''}>${cells}</tr>`;
     })
     .join('');
   return `<div class="table-wrap"><table class="${cls}"><thead><tr>${th}</tr></thead><tbody>${tr}</tbody></table></div>`;
+}
+
+/* ---------- range (football field) ---------- */
+// Rows: label, low, mid, high. A row with only a label (or starting with #) is a group heading.
+// Options: marker (value of a vertical reference line) and marker_label.
+
+function rangeSvg(items, fmt, opts, W, compact) {
+  const fs = compact ? 11 : 12;
+  const lineH = fs + 3;
+  const data = items.filter((d) => !d.group);
+  const marker = toNumber(opts.marker);
+  const hasMarker = Number.isFinite(marker);
+  const all = data.flatMap((d) => [d.lo, d.hi]).concat(hasMarker ? [marker] : []);
+  const { ticks, lo, hi, dec } = niceTicks(Math.min(...all), Math.max(...all), compact ? 4 : 6);
+  const valW = Math.max(...data.flatMap((d) => [fmt(d.lo).length, fmt(d.hi).length])) * FONT_W + 8;
+  const labelW = compact ? 0 : Math.min(250, Math.max(...items.map((d) => d.label.length)) * FONT_W + 16);
+  const x0 = labelW + valW, x1 = W - valW;
+  const sx = (v) => x0 + ((v - lo) / (hi - lo)) * (x1 - x0);
+  const marks = [];
+  const grid = [];
+  let y = hasMarker ? 24 : 6;
+  for (const d of items) {
+    if (d.group) {
+      y += 8;
+      marks.push(`<text class="grp" x="0" y="${f1(y + fs)}">${esc(d.label)}</text>`);
+      y += lineH + 6;
+      continue;
+    }
+    const bh = 14;
+    if (compact) {
+      const ll = wrapLabel(d.label, Math.floor(W / FONT_W));
+      ll.forEach((l, k) => marks.push(`<text class="cat" x="0" y="${f1(y + fs + k * lineH)}">${esc(l)}</text>`));
+      y += ll.length * lineH + 3;
+    } else {
+      const ll = wrapLabel(d.label, Math.floor((labelW - 12) / FONT_W)).slice(0, 2);
+      const rowH = Math.max(bh, ll.length * lineH);
+      const labelTop = y + (rowH - ll.length * lineH) / 2;
+      ll.forEach((l, k) => marks.push(`<text class="cat" x="0" y="${f1(labelTop + fs - 1 + k * lineH)}">${esc(l)}</text>`));
+      y += (rowH - bh) / 2;
+      d._after = (rowH - bh) / 2;
+    }
+    const a = sx(d.lo), b = sx(d.hi), m = sx(d.mid);
+    const tip = ` data-tip="${esc(`${d.label}\n25th: ${fmt(d.lo)} · median: ${fmt(d.mid)} · 75th: ${fmt(d.hi)}`)}"`;
+    marks.push(`<rect class="mk s1" x="${f1(a)}" y="${y}" width="${f1(Math.max(1, m - a - 1))}" height="${bh}" rx="3"${tip}/>`);
+    marks.push(`<rect class="mk s1 upper" x="${f1(m + 1)}" y="${y}" width="${f1(Math.max(1, b - m - 1))}" height="${bh}" rx="3"${tip}/>`);
+    marks.push(`<text class="val" x="${f1(a - 6)}" y="${y + 11}" text-anchor="end">${esc(fmt(d.lo))}</text>`);
+    marks.push(`<text class="val" x="${f1(b + 6)}" y="${y + 11}">${esc(fmt(d.hi))}</text>`);
+    y += bh + (d._after ?? 0) + (compact ? 12 : 14);
+  }
+  const bottom = y;
+  for (const t of ticks) {
+    grid.push(`<line class="grid" x1="${f1(sx(t))}" x2="${f1(sx(t))}" y1="${hasMarker ? 18 : 0}" y2="${f1(bottom)}"/>`);
+    marks.push(`<text class="tick" x="${f1(sx(t))}" y="${f1(bottom + 16)}" text-anchor="middle">${esc(fmt(t, dec))}</text>`);
+  }
+  if (hasMarker) {
+    const mx = sx(marker);
+    grid.push(`<line class="ref" x1="${f1(mx)}" x2="${f1(mx)}" y1="16" y2="${f1(bottom)}"/>`);
+    const anchor = mx > W * 0.7 ? 'end' : mx < W * 0.3 ? 'start' : 'middle';
+    marks.push(`<text class="ref-label" x="${f1(mx)}" y="11" text-anchor="${anchor}">${esc(`${opts.marker_label || 'Reference'} ${fmt(marker)}`)}</text>`);
+  }
+  return svgWrap(W, Math.ceil(bottom + 24), fs, [...grid, ...marks]);
+}
+
+function renderRange(opts, rows, n, err) {
+  const [head, ...body] = rows;
+  if (head.length < 4) return err('a range chart needs four columns: label, low, mid, high.');
+  const items = body.map((r) => {
+    const label = String(r[0] ?? '').replace(/^#\s*/, '');
+    const nums = r.slice(1, 4).map(toNumber);
+    if (String(r[0] ?? '').startsWith('#') || nums.every((v) => !Number.isFinite(v))) return { group: true, label };
+    return { label, lo: nums[0], mid: nums[1], hi: nums[2] };
+  });
+  if (!items.some((d) => !d.group && [d.lo, d.mid, d.hi].every(Number.isFinite)))
+    return err('no complete low / mid / high rows found.');
+  const fmt = makeFormat(opts);
+  const legend = `<ul class="legend"><li><i class="sw s1"></i>${esc(`${head[1]} to ${head[3]}, split at the ${head[2].toLowerCase()}`)}</li>${opts.marker ? `<li><i class="sw sw-ref"></i>${esc(opts.marker_label || 'Reference')}</li>` : ''}</ul>`;
+  return `<figure class="exhibit exhibit-chart" data-type="range">${caption(n, opts, 'Exhibit')}${legend}<div class="chart" role="img" aria-label="${esc(opts.title || 'Range chart')}. Data table follows."><div class="chart-wide">${rangeSvg(items, fmt, opts, 680, false)}</div><div class="chart-narrow">${rangeSvg(items, fmt, opts, 360, true)}</div></div>${footer(opts)}<details class="exhibit-data"><summary>View data</summary>${htmlTable(rows, opts)}</details></figure>`;
 }
 
 export function renderChart(src, n) {
   const { opts, rows } = parseBlock(src);
   const type = (opts.type || 'bar').toLowerCase();
   const err = (msg) => `<div class="exhibit-error"><strong>Chart could not be drawn:</strong> ${esc(msg)}</div>`;
-  if (!['line', 'bar', 'barh', 'stacked', 'waterfall'].includes(type))
-    return err(`unknown type "${type}". Use line, bar, barh, stacked or waterfall.`);
+  if (!['line', 'bar', 'barh', 'stacked', 'waterfall', 'range'].includes(type))
+    return err(`unknown type "${type}". Use line, bar, barh, stacked, waterfall or range.`);
+  if (type === 'range') return renderRange(opts, rows, n, err);
   if (rows.length < 2 || rows[0].length < 2)
     return err('add a header row and at least one data row below the --- line.');
   const [head, ...body] = rows;
@@ -422,6 +528,11 @@ export function renderTable(src, n) {
   return `<figure class="exhibit exhibit-table">${hasHead ? caption(n, opts, 'Exhibit') : ''}${htmlTable(rows, opts)}${footer(opts)}</figure>`;
 }
 
+// Pasted cells (tab, comma or pipe separated) → table HTML, for the key data panel.
+export function tableFromText(text) {
+  return htmlTable(parseBlock(text ?? '').rows, {});
+}
+
 /* ---------- unified plugins ---------- */
 
 export function remarkExhibits() {
@@ -437,12 +548,15 @@ export function remarkExhibits() {
       // "Table: Caption" on the line before a Markdown table → numbered caption
       if (node.type === 'paragraph' && parent && parent.children[index + 1]?.type === 'table') {
         const text = node.children.map((c) => c.value ?? (c.children || []).map((d) => d.value ?? '').join('')).join('');
-        const m = text.match(/^\s*(?:Table|Exhibit)\s*:\s*(.+)$/i);
-        if (m) {
+        const own = splitLabel(text);
+        const m = own ? null : text.match(/^\s*(?:Table|Exhibit)\s*:\s*(.+)$/i);
+        if (own || m) {
           n += 1;
+          const label = own ? own.label : `Exhibit ${n}`;
+          const title = own ? own.title : m[1].trim();
           parent.children[index] = {
             type: 'html',
-            value: `<p class="exhibit-head table-caption"><span class="exhibit-label">Exhibit ${n}</span><span class="exhibit-title">${esc(m[1].trim())}</span></p>`,
+            value: `<p class="exhibit-head table-caption"><span class="exhibit-label">${esc(label)}</span><span class="exhibit-title">${esc(title)}</span></p>`,
           };
           return;
         }
@@ -453,7 +567,9 @@ export function remarkExhibits() {
         node.data = { hName: 'figure', hProperties: { className: ['exhibit', 'exhibit-image'] } };
         if (img.title) {
           n += 1;
-          const cap = img.title;
+          const own = splitLabel(img.title);
+          const cap = own ? own.title : img.title;
+          const capLabel = own ? own.label : `Exhibit ${n}`;
           img.title = null;
           node.children.push({
             type: 'exhibitCaption',
@@ -461,7 +577,7 @@ export function remarkExhibits() {
               hName: 'figcaption',
               hProperties: { className: ['exhibit-head', 'exhibit-head-below'] },
               hChildren: [
-                { type: 'element', tagName: 'span', properties: { className: ['exhibit-label'] }, children: [{ type: 'text', value: `Exhibit ${n}` }] },
+                { type: 'element', tagName: 'span', properties: { className: ['exhibit-label'] }, children: [{ type: 'text', value: capLabel }] },
                 { type: 'element', tagName: 'span', properties: { className: ['exhibit-title'] }, children: [{ type: 'text', value: cap }] },
               ],
             },

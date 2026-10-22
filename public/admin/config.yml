@@ -87,6 +87,21 @@ collections:
       - { name: model_label, label: Model name, widget: string, required: false, hint: 'Shown on the download card, e.g. “Costco three-statement model (.xlsx)”.' }
       - { name: model_note, label: Model description, widget: string, required: false, hint: One line on what is inside the workbook. }
       - { name: draft, label: Draft (hidden from the live site), widget: boolean, default: false, required: false }
+      - name: key_data
+        label: Key data panel (equity studies)
+        label_singular: Row
+        widget: list
+        required: false
+        hint: Optional. Shown beside the opening on wide screens, above the text on phones. E.g. Rating / Neutral, Price target (12m) / US$34.
+        fields:
+          - { name: label, label: Label, widget: string }
+          - { name: value, label: Value, widget: string }
+      - { name: key_table_title, label: Key data table title, widget: string, required: false, hint: 'e.g. My estimates vs consensus' }
+      - name: key_table
+        label: Key data table
+        widget: text
+        required: false
+        hint: Paste cells from Excel (first row is the header). Rows whose label starts with a lowercase letter are shown as sub-rows, e.g. consensus.
       - name: body
         label: Body
         widget: richtext

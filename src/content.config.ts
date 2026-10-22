@@ -20,6 +20,10 @@ const pieces = defineCollection({
       model_label: z.string().optional(),
       model_note: z.string().optional(),
       draft: z.boolean().default(false),
+      // Optional research-note panel: label/value pairs plus a small pasted table.
+      key_data: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
+      key_table_title: z.string().optional(),
+      key_table: z.string().optional(),
     }),
 });
 

@@ -398,6 +398,7 @@ main { flex: 1; }
 .legend li { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 !important; padding: 0 !important; }
 .sw { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: inline-block; }
 .sw-line { height: 2px; width: 1rem; border-radius: 1px; }
+.sw-ref { width: 1rem; height: 0; border-radius: 0; border-top: 1.5px dashed var(--ink-2); }
 
 .chart { position: relative; }
 .chart svg { display: block; width: 100%; height: auto; font-family: var(--sans); overflow: visible; }
@@ -413,6 +414,11 @@ main { flex: 1; }
 .chart .cat { fill: var(--ink-2); }
 .chart .val { fill: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
 .chart .end { fill: var(--ink-2); font-weight: 500; }
+.chart .grp { fill: var(--ink); font-weight: 650; }
+.chart .ref { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.chart .ref-label { fill: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .upper { fill-opacity: 0.62; }
+.chart .val, .chart .ref-label { paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
 .chart .ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .chart .dot { stroke: var(--bg); stroke-width: 2; }
 .chart .hit { fill: transparent; }
@@ -494,9 +500,48 @@ main { flex: 1; }
   }
 }
 .prose tr.total th, .prose tr.total td { font-weight: 650; border-top: 1px solid var(--ink); }
+.prose tr.group th {
+  padding-top: 1.1rem; font-weight: 650; color: var(--ink); border-bottom: 1px solid var(--rule-2);
+}
+.prose tr.sub th { padding-left: 0.9rem; color: var(--muted); }
+.prose tr.sub td { color: var(--muted); }
+.prose table.text-table { min-width: 48rem; }
+.prose .text-table td, .prose .text-table tbody th { font-size: 0.8125rem; line-height: 1.45; min-width: 7.5rem; }
+.table-wrap.overflows:not(.at-end) {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+}
+.prose td.base { font-weight: 700; color: var(--ink); box-shadow: inset 0 -2px 0 var(--accent); }
 @media (hover: hover) { .prose tbody tr:hover td, .prose tbody tr:hover th { background: var(--bg-2); } }
 .prose .table-caption { margin: 2.4em 0 0.85rem; }
 .prose .table-caption + .table-wrap { margin-top: 0; }
+
+/* ---------- key data panel (equity studies) ---------- */
+.key-data { margin: 2rem 0 0; font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.key-data h2 {
+  margin: 0; padding-bottom: 0.45rem; border-bottom: 1px solid var(--ink);
+  font: 650 0.8125rem/1.3 var(--sans); letter-spacing: 0;
+}
+.key-data dl { margin: 0; display: grid; grid-template-columns: 1fr auto; }
+.key-data dt, .key-data dd {
+  margin: 0; padding: 0.4rem 0; border-bottom: 1px solid var(--rule); font-size: 0.8125rem; line-height: 1.35;
+}
+.key-data dt { color: var(--muted); padding-right: 1rem; }
+.key-data dd { color: var(--ink); font-weight: 500; text-align: right; }
+.key-data .key-table { margin-top: 1.25rem; }
+.key-data .table-wrap { margin: 0; }
+.key-data table { width: 100%; border-collapse: collapse; font-size: 0.75rem; line-height: 1.35; }
+.key-data thead th { text-align: left; font-weight: 600; padding: 0.35rem 0.4rem 0.35rem 0; border-bottom: 1px solid var(--ink-2); }
+.key-data td, .key-data tbody th { padding: 0.3rem 0.4rem 0.3rem 0; border-bottom: 1px solid var(--rule); text-align: left; font-weight: 400; }
+.key-data .num { text-align: right; }
+.key-data tr.sub th, .key-data tr.sub td { color: var(--muted); }
+.key-data tr.sub th { padding-left: 0.6rem; }
+@media (min-width: 78rem) {
+  .key-data {
+    grid-column: 3; grid-row: 1 / span 2; justify-self: start; align-self: start;
+    width: 17rem; position: sticky; top: 2rem; margin-top: 2.6rem;
+  }
+}
 
 /* ---------- end of article ---------- */
 .article-end { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }

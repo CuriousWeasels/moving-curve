@@ -6,6 +6,7 @@ import PieceMeta from '../../components/PieceMeta.astro';
 import Icon from '../../components/Icon.astro';
 import { url } from '../../lib/url';
 import { getPieces, pieceUrl, fileName, fmtDate, type Piece } from '../../lib/pieces';
+import { tableFromText } from '../../lib/exhibits.mjs';
 
 export async function getStaticPaths() {
   const pieces = await getPieces();
@@ -55,6 +56,20 @@ const modelName = d.model_label || (d.model_file ? fileName(d.model_file) : '');
           <p>On this page</p>
           <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
         </nav>
+      )}
+      {(d.key_data?.length || d.key_table) && (
+        <aside class="key-data" aria-labelledby="key-data-title">
+          <h2 id="key-data-title">Key data</h2>
+          {d.key_data?.length && (
+            <dl>{d.key_data.map((k) => <><dt>{k.label}</dt><dd>{k.value}</dd></>)}</dl>
+          )}
+          {d.key_table && (
+            <div class="key-table">
+              {d.key_table_title && <h2>{d.key_table_title}</h2>}
+              <Fragment set:html={tableFromText(d.key_table)} />
+            </div>
+          )}
+        </aside>
       )}
       <div class="prose">
         <Content />
@@ -123,6 +138,17 @@ const modelName = d.model_label || (d.model_file ? fileName(d.model_file) : '');
       chart.addEventListener('pointerout', (e) => {
         if (!(e.relatedTarget as Element | null)?.closest?.('[data-tip]')) hide();
       });
+    }
+
+    // Wide tables: fade the right edge while there is more to scroll to.
+    for (const wrap of document.querySelectorAll<HTMLElement>('.table-wrap')) {
+      const update = () => {
+        wrap.classList.toggle('overflows', wrap.scrollWidth > wrap.clientWidth + 1);
+        wrap.classList.toggle('at-end', wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2);
+      };
+      update();
+      wrap.addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', update);
     }
 
     // Contents: mark the section being read.

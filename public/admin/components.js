@@ -2,7 +2,7 @@
 // Both write a fenced block (```chart / ```table) that the site turns into a numbered exhibit.
 
 (function () {
-  const OPTION_KEYS = ['type', 'title', 'subtitle', 'prefix', 'suffix', 'decimals', 'source', 'note'];
+  const OPTION_KEYS = ['type', 'title', 'subtitle', 'prefix', 'suffix', 'decimals', 'marker', 'marker_label', 'base', 'source', 'note'];
 
   function parse(body) {
     const lines = body.replace(/\r/g, '').split('\n');
@@ -52,6 +52,7 @@
           { label: 'Stacked columns (parts of a total)', value: 'stacked' },
           { label: 'Horizontal bars (ranking, e.g. trading comps)', value: 'barh' },
           { label: 'Waterfall (bridges, e.g. EV to equity, value creation)', value: 'waterfall' },
+          { label: 'Range / football field (valuation summary)', value: 'range' },
         ],
       },
       { name: 'title', label: 'Title', widget: 'string', required: false },
@@ -59,6 +60,8 @@
       { name: 'prefix', label: 'Number prefix', widget: 'string', required: false, hint: 'e.g. $' },
       { name: 'suffix', label: 'Number suffix', widget: 'string', required: false, hint: 'e.g. %, x, bn, m' },
       { name: 'decimals', label: 'Decimal places', widget: 'number', required: false, value_type: 'int', min: 0, max: 4 },
+      { name: 'marker', label: 'Reference line (range charts)', widget: 'string', required: false, hint: 'A value to draw as a dashed line, e.g. the current share price 35.33.' },
+      { name: 'marker_label', label: 'Reference line label', widget: 'string', required: false, hint: 'e.g. Share price (20 Oct 2026)' },
       { name: 'source', label: 'Source', widget: 'string', required: false, hint: 'e.g. Company filings, author analysis' },
       {
         name: 'data',
@@ -66,7 +69,8 @@
         widget: 'text',
         hint:
           dataHint +
-          ' Waterfall: one value column; start a row label with = to show a running total (e.g. “= Equity value”) and leave its value blank.',
+          ' Waterfall: one value column; start a row label with = to show a running total (e.g. “= Equity value”) and leave its value blank.' +
+          ' Range: columns Method, Low, Mid, High; a row with only a label (or starting with #) is a group heading.',
       },
     ],
     pattern: /^```chart\n([\s\S]*?)\n```$/m,
@@ -80,8 +84,9 @@
     label: 'Table from Excel',
     icon: 'table_view',
     fields: [
-      { name: 'title', label: 'Title', widget: 'string', required: false, hint: 'Give it a title to number it as an exhibit.' },
+      { name: 'title', label: 'Title', widget: 'string', required: false, hint: 'Start with your own label to keep it, e.g. “Table 2: My model vs consensus”; otherwise it is numbered as an exhibit.' },
       { name: 'subtitle', label: 'Subtitle', widget: 'string', required: false },
+      { name: 'base', label: 'Highlight base case', widget: 'string', required: false, hint: 'Row label | column header of the cell to highlight, e.g. 8.0x | 11.1%' },
       { name: 'source', label: 'Source', widget: 'string', required: false },
       {
         name: 'data',
