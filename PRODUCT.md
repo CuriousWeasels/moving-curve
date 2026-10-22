@@ -20,7 +20,7 @@ A personal publication for long-form investment writing and financial models (DC
 
 ## Positioning
 
-A single author's working notebook of analysis, showing the numbers behind the opinions: each piece can carry its own charts, tables, and downloadable model, not just prose. The name and idea draw on Warren Buffett's *The Snowball*: knowledge compounds along a long curve.
+A single author's working notebook of analysis, showing the numbers behind the opinions: each piece can carry its own charts, tables, and downloadable model, not just prose. The name comes from the inchworm concept: skill as a bell curve that moves forward, worst work catching up before best work reaches further. The site is the owner's way of moving that curve in public and holding themselves accountable.
 
 ## Operating Context
 
@@ -38,7 +38,7 @@ The owner writes pieces and builds models in Excel, exports charts and graphs as
 
 - Name: **Moving Curve** (chosen by the owner).
 - Published under the brand; the owner's name is not on the masthead, only on the About page.
-- Inspiration: Warren Buffett and *The Snowball* (compounding, patience, long horizons).
+- Origin of the name: the inchworm concept (skill as a moving bell curve), as told on the About page. Earlier inspiration: Warren Buffett and *The Snowball*.
 - Must read as professional and credible to finance readers.
 - Standing preference: the category standard, executed at full craft. The owner chose the clean independent-newsletter form (single author, essay-first, inline charts and tables) over a distinctive visual world. Sits alongside the Collaborative Fund blog (collabfund.com/blog) and finance newsletters like Net Interest and The Diff; their craft level is the bar. No smuggled quirk, but it must not look like an off-the-shelf blog theme.
 - No email subscribe at launch.

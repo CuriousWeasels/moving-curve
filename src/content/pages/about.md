@@ -1,17 +1,17 @@
 ---
 title: About
-dek: An independent notebook of investment analysis, written to compound.
+dek: A public record of learning finance, one piece at a time.
 ---
 
-Moving Curve takes its name from an idea in Alice Schroeder's biography of Warren Buffett, *The Snowball*: knowledge, like capital, compounds when you keep adding to it over a long enough run. This site is where that compounding happens in public.
+I started Moving Curve as a way to hold myself accountable for my learning journey in finance. Reading about valuation is one thing. Building the model, writing down a view and putting it where anyone can check it is another. Every piece here is a step I had to finish before I could publish it.
 
-Each piece works through a question in valuation, deals, credit or a specific company, and shows the work: the charts, the tables and, where there is one, the model itself to download and take apart.
+## Why “Moving Curve”
 
-## About the author
+The name comes from the inchworm concept, an idea from performance coach Jared Tendler. It treats a skill not as a single level but as a bell curve. On any given day your work lands somewhere between your worst and your best, and most days fall in the middle.
 
-<!-- Write a few sentences about yourself here: your background, what you're studying or working on, and what you hope readers take away. Edit this page in the admin panel under Pages → About. -->
+Getting better means moving the whole curve forward. First the back edge catches up: your worst work stops being as bad as it used to be. Then the front edge reaches further than it ever has. Like an inchworm, the back moves up before the front can stretch out again.
 
-Written by Jerry Chin. *Replace this line with a short bio in the admin panel.*
+This site is how I move my bell curve forward. Each new study pushes the front edge: a model or a method I hadn't built before. Going back to old work, checking what I got wrong and doing it better next time pulls the back edge along behind it.
 
 ## A note on the models
 
