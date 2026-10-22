@@ -1,0 +1,122 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Moving Curve admin panel (Sveltia CMS). Open /admin/ on the live site, or
+# http://localhost:4321/admin/index.html while `npm run dev` is running.
+
+backend:
+  name: github
+  # The GitHub repository the admin panel saves to.
+  repo: CuriousWeasels/moving-curve
+  branch: main
+  commit_messages:
+    create: 'Publish “{{slug}}”'
+    update: 'Update “{{slug}}”'
+    delete: 'Delete “{{slug}}”'
+    uploadMedia: 'Upload {{path}}'
+    deleteMedia: 'Delete {{path}}'
+
+# Global uploads (model files land in /files/models via the field below).
+media_folder: public/files
+public_folder: /files
+
+site_url: https://curiousweasels.github.io/moving-curve
+display_url: https://curiousweasels.github.io/moving-curve
+logo_url: ../favicon.svg
+
+output:
+  omit_empty_optional_fields: true
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: pieces
+    label: Writing
+    label_singular: Piece
+    description: Every essay, note and model write-up. The newest piece leads the home page.
+    folder: src/content/pieces
+    path: '{{slug}}/index'
+    # Images you add to a piece are saved in the piece's own folder.
+    media_folder: ''
+    public_folder: ''
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    summary: '{{title}}'
+    sortable_fields:
+      fields: [date, title]
+      default: { field: date, direction: descending }
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: With a model, field: model_file, pattern: '.+' }
+    preview_path: /writing/{{slug}}/
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: dek
+        label: Summary
+        widget: text
+        required: false
+        hint: One or two sentences under the title. Also used in the feed, search results and link previews.
+      - name: date
+        label: Publish date
+        widget: datetime
+        format: YYYY-MM-DD
+        time_format: false
+        default: '{{now}}'
+      - name: tags
+        label: Topics
+        widget: list
+        required: false
+        hint: 'Add one topic per item, e.g. Valuation, M&A, LBO, Credit, Markets, Company analysis. Reuse the same spelling so pieces group together; each topic gets its own page.'
+      - name: cover
+        label: Cover image
+        widget: image
+        required: false
+        hint: Optional. Shown above the piece and on the home page when it is the newest piece.
+      - { name: cover_alt, label: Cover image description, widget: string, required: false, hint: Describe the image for screen readers. }
+      - { name: cover_caption, label: Cover caption, widget: string, required: false }
+      - name: model_file
+        label: Model file
+        widget: file
+        required: false
+        media_folder: /public/files/models
+        public_folder: /files/models
+        accept: .xlsx,.xlsm,.xls,.csv,.pdf
+        hint: Attach the Excel model. Readers get a Download button at the top of the piece.
+      - { name: model_label, label: Model name, widget: string, required: false, hint: 'Shown on the download card, e.g. “Costco three-statement model (.xlsx)”.' }
+      - { name: model_note, label: Model description, widget: string, required: false, hint: One line on what is inside the workbook. }
+      - { name: draft, label: Draft (hidden from the live site), widget: boolean, default: false, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        modes: [rich_text, raw]
+        editor_components: [image, table, hr, chart, datatable]
+        hint: 'Use the toolbar for headings, lists, quotes, images and tables. Insert → Data chart draws a chart from numbers; Insert → Table from Excel turns pasted cells into a formatted exhibit. An image title becomes its caption.'
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About
+        file: src/content/pages/about.md
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: dek, label: Summary, widget: string, required: false }
+          - { name: body, label: Body, widget: richtext, modes: [rich_text, raw], editor_components: [image, table, hr] }
+
+  - name: settings
+    label: Settings
+    files:
+      - name: site
+        label: Site settings
+        file: src/data/site.json
+        format: json
+        fields:
+          - { name: title, label: Site name, widget: string }
+          - { name: tagline, label: Tagline, widget: string, hint: Used in the browser tab title on the home page. }
+          - { name: description, label: Description, widget: text, hint: Used for search engines and link previews. }
+          - { name: author, label: Author name, widget: string, hint: Shown on the About page only. }
+          - { name: email, label: Contact email, widget: string, required: false }
+          - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
+          - { name: disclaimer, label: Disclaimer, widget: text, hint: Shown in the footer and at the end of every piece. }

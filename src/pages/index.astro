@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Feed from '../components/Feed.astro';
+import TopicRow from '../components/TopicRow.astro';
+import PieceMeta from '../components/PieceMeta.astro';
+import Icon from '../components/Icon.astro';
+import site from '../data/site.json';
+import { url } from '../lib/url';
+import { getPieces, pieceUrl, allTags } from '../lib/pieces';
+
+const pieces = await getPieces();
+const [lead, ...rest] = pieces;
+const tags = allTags(pieces);
+const vt = (id: string) => `view-transition-name: t-${id.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+---
+<Base>
+  <div class="wrap">
+    <h1 class="visually-hidden">{site.title}</h1>
+    <div class="intro">
+      <p>{site.tagline}</p>
+    </div>
+
+    {lead ? (
+      <article class="lead">
+        {lead.data.cover && (
+          <figure class="lead-cover">
+            <a href={pieceUrl(lead)} tabindex="-1" aria-hidden="true">
+              <Image src={lead.data.cover} alt={lead.data.cover_alt ?? ''} widths={[680, 1360]} sizes="(min-width: 46rem) 680px, 100vw" />
+            </a>
+          </figure>
+        )}
+        <h2><a href={pieceUrl(lead)} style={vt(lead.id)}>{lead.data.title}</a></h2>
+        {lead.data.dek && <p class="dek">{lead.data.dek}</p>}
+        <PieceMeta piece={lead} />
+        <a class="more" href={pieceUrl(lead)} aria-label={`Read: ${lead.data.title}`}>Read the piece <Icon name="arrow" /></a>
+      </article>
+    ) : (
+      <p class="empty">Nothing published yet. Open <a href={url('/admin/index.html')}>the admin panel</a> to write the first piece.</p>
+    )}
+
+    {rest.length > 0 && (
+      <section aria-labelledby="all">
+        <div class="feed-head">
+          <h2 id="all">All writing</h2>
+          <a href={url('/rss.xml')}>RSS</a>
+        </div>
+        {tags.length > 1 && <TopicRow tags={tags} />}
+        <Feed pieces={rest} />
+      </section>
+    )}
+  </div>
+</Base>

@@ -1,0 +1,143 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PieceMeta from '../../components/PieceMeta.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url';
+import { getPieces, pieceUrl, fileName, fmtDate, type Piece } from '../../lib/pieces';
+
+export async function getStaticPaths() {
+  const pieces = await getPieces();
+  return pieces.map((piece, i) => ({
+    params: { slug: piece.id },
+    props: { piece, newer: pieces[i - 1], older: pieces[i + 1] },
+  }));
+}
+
+interface Props { piece: Piece; newer?: Piece; older?: Piece; }
+const { piece, newer, older } = Astro.props;
+const { Content, headings } = await render(piece);
+const d = piece.data;
+const toc = headings.filter((h) => h.depth === 2 && h.slug !== 'footnote-label');
+const vt = `view-transition-name: t-${piece.id.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+const modelName = d.model_label || (d.model_file ? fileName(d.model_file) : '');
+---
+<Base title={d.title} description={d.dek} type="article" published={d.date} image={d.cover?.src}>
+  <article>
+    <header class="wrap article-head">
+      <h1 style={vt}>{d.title}</h1>
+      {d.dek && <p class="dek">{d.dek}</p>}
+      <PieceMeta piece={piece} />
+      {d.updated && <p class="meta" style="margin-top:.4rem">Updated {fmtDate(d.updated)}</p>}
+      {d.cover && (
+        <figure class="article-cover">
+          <Image src={d.cover} alt={d.cover_alt ?? ''} widths={[680, 1360]} sizes="(min-width: 46rem) 680px, 100vw" loading="eager" />
+          {d.cover_caption && <figcaption>{d.cover_caption}</figcaption>}
+        </figure>
+      )}
+      {d.model_file && (
+        <div class="model-row">
+          <div class="what">
+            <strong><Icon name="sheet" />{modelName}</strong>
+            <span class="note">{d.model_note ?? 'The model behind this piece, as an Excel workbook.'}</span>
+          </div>
+          <a class="get" href={url(d.model_file)} download>
+            <Icon name="download" />Download model
+          </a>
+        </div>
+      )}
+    </header>
+
+    <div class="article-layout">
+      {toc.length >= 3 && (
+        <nav class="toc" aria-label="On this page">
+          <p>On this page</p>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </nav>
+      )}
+      <div class="prose">
+        <Content />
+      </div>
+      <footer class="article-end">
+        <PieceMeta piece={piece} date={false} />
+        {(newer || older) && (
+          <nav class="pager" aria-label="More writing">
+            {older && <a class="prev" href={pieceUrl(older)}><small>Previous</small><span>{older.data.title}</span></a>}
+            {newer && <a class="next" href={pieceUrl(newer)}><small>Next</small><span>{newer.data.title}</span></a>}
+          </nav>
+        )}
+      </footer>
+    </div>
+  </article>
+
+  <script>
+    // Chart hover layer: one tooltip per chart, positioned at the hovered mark.
+    for (const chart of document.querySelectorAll<HTMLElement>('.chart')) {
+      const tip = document.createElement('div');
+      tip.className = 'chart-tip';
+      tip.setAttribute('role', 'presentation');
+      chart.append(tip);
+      let guide: SVGLineElement | null = null;
+
+      const show = (el: Element) => {
+        const text = el.getAttribute('data-tip') ?? '';
+        const [first, ...rest] = text.split('\n');
+        tip.innerHTML = '';
+        const b = document.createElement('b');
+        b.textContent = first;
+        tip.append(b);
+        if (rest.length) tip.append('\n' + rest.join('\n'));
+        const box = chart.getBoundingClientRect();
+        const svg = el.closest('svg')!;
+        let r = el.getBoundingClientRect();
+        guide?.remove();
+        guide = null;
+        const gx = el.getAttribute('data-x');
+        if (gx) {
+          guide = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          guide.setAttribute('class', 'guide');
+          guide.setAttribute('x1', gx);
+          guide.setAttribute('x2', gx);
+          guide.setAttribute('y1', el.getAttribute('y') ?? '0');
+          guide.setAttribute('y2', String(Number(el.getAttribute('y')) + Number(el.getAttribute('height'))));
+          svg.insertBefore(guide, svg.firstChild);
+          const pr = guide.getBoundingClientRect();
+          r = { left: pr.left, right: pr.right, top: r.top + r.height * 0.2, width: 0 } as DOMRect;
+        }
+        tip.classList.add('on');
+        const tw = tip.offsetWidth;
+        let x = r.left - box.left + r.width / 2 - tw / 2;
+        x = Math.max(0, Math.min(x, box.width - tw));
+        const y = r.top - box.top - tip.offsetHeight - 8;
+        tip.style.left = `${x}px`;
+        tip.style.top = `${Math.max(-8, y)}px`;
+      };
+      const hide = () => { tip.classList.remove('on'); guide?.remove(); guide = null; };
+
+      chart.addEventListener('pointerover', (e) => {
+        const el = (e.target as Element).closest('[data-tip]');
+        if (el) show(el);
+      });
+      chart.addEventListener('pointerleave', hide);
+      chart.addEventListener('pointerout', (e) => {
+        if (!(e.relatedTarget as Element | null)?.closest?.('[data-tip]')) hide();
+      });
+    }
+
+    // Contents: mark the section being read.
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.toc a')];
+    if (links.length) {
+      const targets = links.map((a) => document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter(Boolean) as HTMLElement[];
+      let queued = false;
+      const update = () => {
+        queued = false;
+        let active = targets[0];
+        for (const t of targets) if (t.getBoundingClientRect().top < window.innerHeight * 0.35) active = t;
+        links.forEach((a) => a.setAttribute('aria-current', String(decodeURIComponent(a.hash.slice(1)) === active.id)));
+      };
+      addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+      update();
+    }
+  </script>
+</Base>

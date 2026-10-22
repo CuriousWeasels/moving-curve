@@ -1,0 +1,24 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+import { url } from '../lib/url';
+
+const page = await getEntry('pages', 'about');
+if (!page) throw new Error('Missing src/content/pages/about.md');
+const { Content } = await render(page);
+---
+<Base title={page.data.title} description={page.data.dek}>
+  <div class="wrap about">
+    <header class="page-head">
+      <h1>{page.data.title}</h1>
+      {page.data.dek && <p>{page.data.dek}</p>}
+    </header>
+    <div class="prose"><Content /></div>
+    <div class="contact">
+      {site.email && <a href={`mailto:${site.email}`}>Email</a>}
+      {site.linkedin && <a href={site.linkedin} rel="me">LinkedIn</a>}
+      <a href={url('/rss.xml')}>RSS feed</a>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,34 @@
+---
+// One stroke icon set: 24px grid, 1.6 stroke, round caps.
+interface Props { name: 'arrow' | 'download' | 'sheet' | 'rss' | 'mail' | 'linkedin' | 'back'; }
+const { name } = Astro.props;
+---
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  {name === 'arrow' && <path d="M5 12h14M13 6l6 6-6 6" />}
+  {name === 'back' && <path d="M19 12H5M11 6l-6 6 6 6" />}
+  {name === 'download' && <path d="M12 4v11M7 10.5l5 5 5-5M5 19.5h14" />}
+  {name === 'sheet' && (
+    <>
+      <rect x="4" y="4" width="16" height="16" rx="2" />
+      <path d="M4 9.5h16M4 14.75h16M9.5 9.5V20" />
+    </>
+  )}
+  {name === 'rss' && (
+    <>
+      <path d="M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14" />
+      <circle cx="5.5" cy="18.5" r="1" fill="currentColor" />
+    </>
+  )}
+  {name === 'mail' && (
+    <>
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+      <path d="M4 7l8 6 8-6" />
+    </>
+  )}
+  {name === 'linkedin' && (
+    <>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" />
+      <path d="M8 10.5v6M8 7.5v.01M11.5 16.5v-6M11.5 13c0-1.6 1-2.6 2.4-2.6s2.1 1 2.1 2.6v3.5" />
+    </>
+  )}
+</svg>

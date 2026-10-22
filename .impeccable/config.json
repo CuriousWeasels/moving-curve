@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-22T08:52:37.821Z",
+        "reason": "assistant decision: throwaway direction-round sketch in .impeccable/mocks/decision, not shipped"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-22T08:52:38.029Z",
+        "reason": "assistant decision: throwaway direction-round sketch in .impeccable/mocks/decision, not shipped"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-10-22T08:52:38.244Z",
+        "reason": "assistant decision: throwaway direction-round sketch in .impeccable/mocks/decision, not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-22T08:57:07.655Z",
+        "reason": "assistant decision: throwaway direction-round sketch in .impeccable/mocks/decision, not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-10-22T08:57:07.915Z",
+        "reason": "assistant decision: throwaway direction-round sketch in .impeccable/mocks/decision, not shipped"
+      }
+    ]
+  }
+}

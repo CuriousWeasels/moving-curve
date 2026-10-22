@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Feed from '../../components/Feed.astro';
+import TopicRow from '../../components/TopicRow.astro';
+import { getPieces, allTags, tagSlug, type Piece } from '../../lib/pieces';
+
+export async function getStaticPaths() {
+  const pieces = await getPieces();
+  const tags = allTags(pieces);
+  return tags.map(([tag]) => ({
+    params: { tag: tagSlug(tag) },
+    props: { tag, list: pieces.filter((p) => p.data.tags.includes(tag)), tags, total: pieces.length },
+  }));
+}
+
+interface Props { tag: string; list: Piece[]; tags: [string, number][]; total: number; }
+const { tag, list, tags, total } = Astro.props;
+---
+<Base title={tag} description={`Writing and models on ${tag} from Moving Curve.`}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>{tag}</h1>
+      <p>{list.length} {list.length === 1 ? 'piece' : 'pieces'}</p>
+    </header>
+    <TopicRow tags={tags} current={tag} />
+    <Feed pieces={list} />
+  </div>
+</Base>

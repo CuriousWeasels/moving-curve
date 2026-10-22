@@ -1,0 +1,37 @@
+---
+import { type Piece, pieceUrl, minutes, tagUrl, hasModel, fmtShort } from '../lib/pieces';
+import Icon from './Icon.astro';
+
+interface Props { pieces: Piece[]; }
+const { pieces } = Astro.props;
+
+const byYear = new Map<number, Piece[]>();
+for (const p of pieces) {
+  const y = p.data.date.getUTCFullYear();
+  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+}
+const vt = (p: Piece) => `view-transition-name: t-${p.id.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+---
+{[...byYear.entries()].map(([year, list]) => (
+  <section aria-labelledby={`y-${year}`}>
+    <h3 class="year" id={`y-${year}`}>{year}</h3>
+    <ul class="feed">
+      {list.map((p) => (
+        <li>
+          <time datetime={p.data.date.toISOString()}>{fmtShort(p.data.date)}</time>
+          <div>
+            <h4><a href={pieceUrl(p)} style={vt(p)}>{p.data.title}</a></h4>
+            {p.data.dek && <p>{p.data.dek}</p>}
+            <div class="meta">
+              <span>{minutes(p)} min</span>
+              {hasModel(p) && <span class="model-flag"><Icon name="sheet" />Model</span>}
+              {p.data.tags.length > 0 && (
+                <span class="tags">{p.data.tags.map((t) => <a href={tagUrl(t)}>{t}</a>)}</span>
+              )}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+))}

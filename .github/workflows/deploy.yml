@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+# Builds the site and publishes it on every push to main (including saves from the admin panel).
+# Custom domain: set the repository variable CUSTOM_DOMAIN (e.g. movingcurve.com) and the site
+# builds for that domain at its root. Without it, it builds for <user>.github.io/<repo>/.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: ${{ vars.CUSTOM_DOMAIN && format('https://{0}', vars.CUSTOM_DOMAIN) || format('https://{0}.github.io', github.repository_owner) }}
+      BASE_PATH: ${{ vars.CUSTOM_DOMAIN && '/' || format('/{0}', github.event.repository.name) }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: withastro/action@v6
+        with:
+          node-version: 24
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

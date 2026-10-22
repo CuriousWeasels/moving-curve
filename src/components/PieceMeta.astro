@@ -1,0 +1,27 @@
+---
+import { type Piece, minutes, tagUrl, hasModel, fmtDate } from '../lib/pieces';
+import Icon from './Icon.astro';
+
+interface Props { piece: Piece; date?: boolean; }
+const { piece, date = true } = Astro.props;
+const tags = piece.data.tags;
+---
+<div class="meta">
+  {date && <time datetime={piece.data.date.toISOString()}>{fmtDate(piece.data.date)}</time>}
+  {date && <span class="sep" aria-hidden="true">/</span>}
+  <span>{minutes(piece)} min read</span>
+  {hasModel(piece) && (
+    <>
+      <span class="sep" aria-hidden="true">/</span>
+      <span class="model-flag"><Icon name="sheet" />Model included</span>
+    </>
+  )}
+  {tags.length > 0 && (
+    <>
+      <span class="sep" aria-hidden="true">/</span>
+      <span class="tags">
+        {tags.map((t) => <a href={tagUrl(t)}>{t}</a>)}
+      </span>
+    </>
+  )}
+</div>

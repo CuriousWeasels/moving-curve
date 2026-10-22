@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+<Base title="Page not found">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>This page isn’t here</h1>
+      <p>The link may be old, or the piece may have moved. <a href={url('/')}>Go to the latest writing</a> or browse <a href={url('/topics/')}>by topic</a>.</p>
+    </header>
+  </div>
+</Base>

@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import Feed from '../../components/Feed.astro';
+import { getPieces, allTags, tagUrl, tagSlug } from '../../lib/pieces';
+
+const pieces = await getPieces();
+const tags = allTags(pieces);
+---
+<Base title="Topics" description="Every piece on Moving Curve, grouped by topic.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Topics</h1>
+      <p>{pieces.length} {pieces.length === 1 ? 'piece' : 'pieces'} across {tags.length} {tags.length === 1 ? 'topic' : 'topics'}.</p>
+    </header>
+    {tags.length === 0 && <p class="empty">No topics yet. Add tags to a piece in the admin panel and they show up here.</p>}
+    {tags.map(([t, n]) => (
+      <section aria-labelledby={`t-${tagSlug(t)}`}>
+        <div class="feed-head">
+          <h2 id={`t-${tagSlug(t)}`}>{t}</h2>
+          <a href={tagUrl(t)}>{n} {n === 1 ? 'piece' : 'pieces'}</a>
+        </div>
+        <Feed pieces={pieces.filter((p) => p.data.tags.includes(t)).slice(0, 3)} />
+      </section>
+    ))}
+  </div>
+</Base>

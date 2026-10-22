@@ -1,0 +1,766 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T08:56:21.344Z",
+  "title": "Design System: Moving Curve",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100% 0 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26.4% 0 89.9)",
+          "oklch(37.9% 0 89.9)",
+          "oklch(49.3% 0 89.9)",
+          "oklch(60.7% 0 89.9)",
+          "oklch(72.1% 0 89.9)",
+          "oklch(83.6% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper 2",
+        "canonical": "#f6f7f8",
+        "oklch": "oklch(97.6% 0.002 247.8)",
+        "tonalRamp": [
+          "oklch(15% 0.002 247.8)",
+          "oklch(26.4% 0.002 247.8)",
+          "oklch(37.9% 0.002 247.8)",
+          "oklch(49.3% 0.002 247.8)",
+          "oklch(60.7% 0.002 247.8)",
+          "oklch(72.1% 0.002 247.8)",
+          "oklch(83.6% 0.002 247.8)",
+          "oklch(95% 0.002 247.8)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#15171a",
+        "oklch": "oklch(20.4% 0.007 258.4)",
+        "tonalRamp": [
+          "oklch(15% 0.007 258.4)",
+          "oklch(26.4% 0.007 258.4)",
+          "oklch(37.9% 0.007 258.4)",
+          "oklch(49.3% 0.007 258.4)",
+          "oklch(60.7% 0.007 258.4)",
+          "oklch(72.1% 0.007 258.4)",
+          "oklch(83.6% 0.007 258.4)",
+          "oklch(95% 0.007 258.4)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#464b53",
+        "oklch": "oklch(41.1% 0.015 259.8)",
+        "tonalRamp": [
+          "oklch(15% 0.015 259.8)",
+          "oklch(26.4% 0.015 259.8)",
+          "oklch(37.9% 0.015 259.8)",
+          "oklch(49.3% 0.015 259.8)",
+          "oklch(60.7% 0.015 259.8)",
+          "oklch(72.1% 0.015 259.8)",
+          "oklch(83.6% 0.015 259.8)",
+          "oklch(95% 0.015 259.8)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#6a7079",
+        "oklch": "oklch(54.3% 0.016 258.4)",
+        "tonalRamp": [
+          "oklch(15% 0.016 258.4)",
+          "oklch(26.4% 0.016 258.4)",
+          "oklch(37.9% 0.016 258.4)",
+          "oklch(49.3% 0.016 258.4)",
+          "oklch(60.7% 0.016 258.4)",
+          "oklch(72.1% 0.016 258.4)",
+          "oklch(83.6% 0.016 258.4)",
+          "oklch(95% 0.016 258.4)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#e4e6e9",
+        "oklch": "oklch(92.4% 0.005 258.3)",
+        "tonalRamp": [
+          "oklch(15% 0.005 258.3)",
+          "oklch(26.4% 0.005 258.3)",
+          "oklch(37.9% 0.005 258.3)",
+          "oklch(49.3% 0.005 258.3)",
+          "oklch(60.7% 0.005 258.3)",
+          "oklch(72.1% 0.005 258.3)",
+          "oklch(83.6% 0.005 258.3)",
+          "oklch(95% 0.005 258.3)"
+        ]
+      },
+      "rule-2": {
+        "role": "neutral",
+        "displayName": "Rule 2",
+        "canonical": "#cfd3d8",
+        "oklch": "oklch(86.5% 0.008 253.9)",
+        "tonalRamp": [
+          "oklch(15% 0.008 253.9)",
+          "oklch(26.4% 0.008 253.9)",
+          "oklch(37.9% 0.008 253.9)",
+          "oklch(49.3% 0.008 253.9)",
+          "oklch(60.7% 0.008 253.9)",
+          "oklch(72.1% 0.008 253.9)",
+          "oklch(83.6% 0.008 253.9)",
+          "oklch(95% 0.008 253.9)"
+        ]
+      },
+      "ledger-blue": {
+        "role": "primary",
+        "displayName": "Ledger Blue",
+        "canonical": "#1d5cc0",
+        "oklch": "oklch(49.5% 0.17 259.7)",
+        "tonalRamp": [
+          "oklch(15% 0.15 259.7)",
+          "oklch(26.4% 0.15 259.7)",
+          "oklch(37.9% 0.15 259.7)",
+          "oklch(49.3% 0.15 259.7)",
+          "oklch(60.7% 0.15 259.7)",
+          "oklch(72.1% 0.15 259.7)",
+          "oklch(83.6% 0.15 259.7)",
+          "oklch(95% 0.15 259.7)"
+        ]
+      },
+      "ledger-blue-deep": {
+        "role": "primary",
+        "displayName": "Ledger Blue Deep",
+        "canonical": "#164a9c",
+        "oklch": "oklch(42.6% 0.145 259.6)",
+        "tonalRamp": [
+          "oklch(15% 0.145 259.6)",
+          "oklch(26.4% 0.145 259.6)",
+          "oklch(37.9% 0.145 259.6)",
+          "oklch(49.3% 0.145 259.6)",
+          "oklch(60.7% 0.145 259.6)",
+          "oklch(72.1% 0.145 259.6)",
+          "oklch(83.6% 0.145 259.6)",
+          "oklch(95% 0.145 259.6)"
+        ]
+      },
+      "ledger-wash": {
+        "role": "primary",
+        "displayName": "Ledger Wash",
+        "canonical": "#dce8fa",
+        "oklch": "oklch(92.7% 0.028 258.4)",
+        "tonalRamp": [
+          "oklch(15% 0.028 258.4)",
+          "oklch(26.4% 0.028 258.4)",
+          "oklch(37.9% 0.028 258.4)",
+          "oklch(49.3% 0.028 258.4)",
+          "oklch(60.7% 0.028 258.4)",
+          "oklch(72.1% 0.028 258.4)",
+          "oklch(83.6% 0.028 258.4)",
+          "oklch(95% 0.028 258.4)"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Selection",
+        "canonical": "#cfe0f8",
+        "oklch": "oklch(90.1% 0.038 257)",
+        "tonalRamp": [
+          "oklch(15% 0.038 257)",
+          "oklch(26.4% 0.038 257)",
+          "oklch(37.9% 0.038 257)",
+          "oklch(49.3% 0.038 257)",
+          "oklch(60.7% 0.038 257)",
+          "oklch(72.1% 0.038 257)",
+          "oklch(83.6% 0.038 257)",
+          "oklch(95% 0.038 257)"
+        ]
+      },
+      "series-2-copper": {
+        "role": "secondary",
+        "displayName": "Copper (series 2)",
+        "canonical": "#c8602e",
+        "oklch": "oklch(60.7% 0.147 44.1)",
+        "tonalRamp": [
+          "oklch(15% 0.147 44.1)",
+          "oklch(26.4% 0.147 44.1)",
+          "oklch(37.9% 0.147 44.1)",
+          "oklch(49.3% 0.147 44.1)",
+          "oklch(60.7% 0.147 44.1)",
+          "oklch(72.1% 0.147 44.1)",
+          "oklch(83.6% 0.147 44.1)",
+          "oklch(95% 0.147 44.1)"
+        ]
+      },
+      "series-3-aqua": {
+        "role": "secondary",
+        "displayName": "Aqua (series 3)",
+        "canonical": "#1a9a6c",
+        "oklch": "oklch(61% 0.126 162.5)",
+        "tonalRamp": [
+          "oklch(15% 0.126 162.5)",
+          "oklch(26.4% 0.126 162.5)",
+          "oklch(37.9% 0.126 162.5)",
+          "oklch(49.3% 0.126 162.5)",
+          "oklch(60.7% 0.126 162.5)",
+          "oklch(72.1% 0.126 162.5)",
+          "oklch(83.6% 0.126 162.5)",
+          "oklch(95% 0.126 162.5)"
+        ]
+      },
+      "series-4-ochre": {
+        "role": "secondary",
+        "displayName": "Ochre (series 4)",
+        "canonical": "#d39200",
+        "oklch": "oklch(70.6% 0.148 77.1)",
+        "tonalRamp": [
+          "oklch(15% 0.148 77.1)",
+          "oklch(26.4% 0.148 77.1)",
+          "oklch(37.9% 0.148 77.1)",
+          "oklch(49.3% 0.148 77.1)",
+          "oklch(60.7% 0.148 77.1)",
+          "oklch(72.1% 0.148 77.1)",
+          "oklch(83.6% 0.148 77.1)",
+          "oklch(95% 0.148 77.1)"
+        ]
+      },
+      "series-5-magenta": {
+        "role": "secondary",
+        "displayName": "Magenta (series 5)",
+        "canonical": "#c9577f",
+        "oklch": "oklch(61.2% 0.15 0.5)",
+        "tonalRamp": [
+          "oklch(15% 0.15 0.5)",
+          "oklch(26.4% 0.15 0.5)",
+          "oklch(37.9% 0.15 0.5)",
+          "oklch(49.3% 0.15 0.5)",
+          "oklch(60.7% 0.15 0.5)",
+          "oklch(72.1% 0.15 0.5)",
+          "oklch(83.6% 0.15 0.5)",
+          "oklch(95% 0.15 0.5)"
+        ]
+      },
+      "waterfall-total": {
+        "role": "neutral",
+        "displayName": "Waterfall Grey",
+        "canonical": "#5b6169",
+        "oklch": "oklch(49% 0.015 255.6)",
+        "tonalRamp": [
+          "oklch(15% 0.015 255.6)",
+          "oklch(26.4% 0.015 255.6)",
+          "oklch(37.9% 0.015 255.6)",
+          "oklch(49.3% 0.015 255.6)",
+          "oklch(60.7% 0.015 255.6)",
+          "oklch(72.1% 0.015 255.6)",
+          "oklch(83.6% 0.015 255.6)",
+          "oklch(95% 0.015 255.6)"
+        ]
+      },
+      "dark-paper": {
+        "role": "neutral",
+        "displayName": "Dark Paper",
+        "canonical": "#111315",
+        "oklch": "oklch(18.5% 0.005 248.1)",
+        "tonalRamp": [
+          "oklch(15% 0.005 248.1)",
+          "oklch(26.4% 0.005 248.1)",
+          "oklch(37.9% 0.005 248.1)",
+          "oklch(49.3% 0.005 248.1)",
+          "oklch(60.7% 0.005 248.1)",
+          "oklch(72.1% 0.005 248.1)",
+          "oklch(83.6% 0.005 248.1)",
+          "oklch(95% 0.005 248.1)"
+        ]
+      },
+      "dark-paper-2": {
+        "role": "neutral",
+        "displayName": "Dark Paper 2",
+        "canonical": "#181b1e",
+        "oklch": "oklch(22% 0.007 248.2)",
+        "tonalRamp": [
+          "oklch(15% 0.007 248.2)",
+          "oklch(26.4% 0.007 248.2)",
+          "oklch(37.9% 0.007 248.2)",
+          "oklch(49.3% 0.007 248.2)",
+          "oklch(60.7% 0.007 248.2)",
+          "oklch(72.1% 0.007 248.2)",
+          "oklch(83.6% 0.007 248.2)",
+          "oklch(95% 0.007 248.2)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "canonical": "#eceef0",
+        "oklch": "oklch(94.8% 0.003 247.9)",
+        "tonalRamp": [
+          "oklch(15% 0.003 247.9)",
+          "oklch(26.4% 0.003 247.9)",
+          "oklch(37.9% 0.003 247.9)",
+          "oklch(49.3% 0.003 247.9)",
+          "oklch(60.7% 0.003 247.9)",
+          "oklch(72.1% 0.003 247.9)",
+          "oklch(83.6% 0.003 247.9)",
+          "oklch(95% 0.003 247.9)"
+        ]
+      },
+      "dark-ink-2": {
+        "role": "neutral",
+        "displayName": "Dark Ink 2",
+        "canonical": "#b8bdc4",
+        "oklch": "oklch(79.7% 0.011 256.7)",
+        "tonalRamp": [
+          "oklch(15% 0.011 256.7)",
+          "oklch(26.4% 0.011 256.7)",
+          "oklch(37.9% 0.011 256.7)",
+          "oklch(49.3% 0.011 256.7)",
+          "oklch(60.7% 0.011 256.7)",
+          "oklch(72.1% 0.011 256.7)",
+          "oklch(83.6% 0.011 256.7)",
+          "oklch(95% 0.011 256.7)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark Muted",
+        "canonical": "#8e959e",
+        "oklch": "oklch(66.7% 0.016 254.6)",
+        "tonalRamp": [
+          "oklch(15% 0.016 254.6)",
+          "oklch(26.4% 0.016 254.6)",
+          "oklch(37.9% 0.016 254.6)",
+          "oklch(49.3% 0.016 254.6)",
+          "oklch(60.7% 0.016 254.6)",
+          "oklch(72.1% 0.016 254.6)",
+          "oklch(83.6% 0.016 254.6)",
+          "oklch(95% 0.016 254.6)"
+        ]
+      },
+      "dark-rule": {
+        "role": "neutral",
+        "displayName": "Dark Rule",
+        "canonical": "#262a2f",
+        "oklch": "oklch(28.3% 0.011 254)",
+        "tonalRamp": [
+          "oklch(15% 0.011 254)",
+          "oklch(26.4% 0.011 254)",
+          "oklch(37.9% 0.011 254)",
+          "oklch(49.3% 0.011 254)",
+          "oklch(60.7% 0.011 254)",
+          "oklch(72.1% 0.011 254)",
+          "oklch(83.6% 0.011 254)",
+          "oklch(95% 0.011 254)"
+        ]
+      },
+      "dark-rule-2": {
+        "role": "neutral",
+        "displayName": "Dark Rule 2",
+        "canonical": "#353a40",
+        "oklch": "oklch(34.6% 0.013 253)",
+        "tonalRamp": [
+          "oklch(15% 0.013 253)",
+          "oklch(26.4% 0.013 253)",
+          "oklch(37.9% 0.013 253)",
+          "oklch(49.3% 0.013 253)",
+          "oklch(60.7% 0.013 253)",
+          "oklch(72.1% 0.013 253)",
+          "oklch(83.6% 0.013 253)",
+          "oklch(95% 0.013 253)"
+        ]
+      },
+      "dark-ledger-blue": {
+        "role": "primary",
+        "displayName": "Dark Ledger Blue",
+        "canonical": "#4a8ae6",
+        "oklch": "oklch(63.5% 0.154 257.7)",
+        "tonalRamp": [
+          "oklch(15% 0.15 257.7)",
+          "oklch(26.4% 0.15 257.7)",
+          "oklch(37.9% 0.15 257.7)",
+          "oklch(49.3% 0.15 257.7)",
+          "oklch(60.7% 0.15 257.7)",
+          "oklch(72.1% 0.15 257.7)",
+          "oklch(83.6% 0.15 257.7)",
+          "oklch(95% 0.15 257.7)"
+        ]
+      },
+      "dark-ledger-blue-light": {
+        "role": "primary",
+        "displayName": "Dark Ledger Blue Light",
+        "canonical": "#a7c9f8",
+        "oklch": "oklch(82.8% 0.076 256.6)",
+        "tonalRamp": [
+          "oklch(15% 0.076 256.6)",
+          "oklch(26.4% 0.076 256.6)",
+          "oklch(37.9% 0.076 256.6)",
+          "oklch(49.3% 0.076 256.6)",
+          "oklch(60.7% 0.076 256.6)",
+          "oklch(72.1% 0.076 256.6)",
+          "oklch(83.6% 0.076 256.6)",
+          "oklch(95% 0.076 256.6)"
+        ]
+      },
+      "dark-ledger-wash": {
+        "role": "primary",
+        "displayName": "Dark Ledger Wash",
+        "canonical": "#1b2a40",
+        "oklch": "oklch(28.3% 0.046 257.8)",
+        "tonalRamp": [
+          "oklch(15% 0.046 257.8)",
+          "oklch(26.4% 0.046 257.8)",
+          "oklch(37.9% 0.046 257.8)",
+          "oklch(49.3% 0.046 257.8)",
+          "oklch(60.7% 0.046 257.8)",
+          "oklch(72.1% 0.046 257.8)",
+          "oklch(83.6% 0.046 257.8)",
+          "oklch(95% 0.046 257.8)"
+        ]
+      },
+      "dark-selection": {
+        "role": "primary",
+        "displayName": "Dark Selection",
+        "canonical": "#24426e",
+        "oklch": "oklch(37.9% 0.084 257.9)",
+        "tonalRamp": [
+          "oklch(15% 0.084 257.9)",
+          "oklch(26.4% 0.084 257.9)",
+          "oklch(37.9% 0.084 257.9)",
+          "oklch(49.3% 0.084 257.9)",
+          "oklch(60.7% 0.084 257.9)",
+          "oklch(72.1% 0.084 257.9)",
+          "oklch(83.6% 0.084 257.9)",
+          "oklch(95% 0.084 257.9)"
+        ]
+      },
+      "dark-series-2-copper": {
+        "role": "secondary",
+        "displayName": "Dark Copper (series 2)",
+        "canonical": "#d9602c",
+        "oklch": "oklch(63.2% 0.165 41.7)",
+        "tonalRamp": [
+          "oklch(15% 0.15 41.7)",
+          "oklch(26.4% 0.15 41.7)",
+          "oklch(37.9% 0.15 41.7)",
+          "oklch(49.3% 0.15 41.7)",
+          "oklch(60.7% 0.15 41.7)",
+          "oklch(72.1% 0.15 41.7)",
+          "oklch(83.6% 0.15 41.7)",
+          "oklch(95% 0.15 41.7)"
+        ]
+      },
+      "dark-series-3-aqua": {
+        "role": "secondary",
+        "displayName": "Dark Aqua (series 3)",
+        "canonical": "#1fa575",
+        "oklch": "oklch(64.2% 0.132 162.8)",
+        "tonalRamp": [
+          "oklch(15% 0.132 162.8)",
+          "oklch(26.4% 0.132 162.8)",
+          "oklch(37.9% 0.132 162.8)",
+          "oklch(49.3% 0.132 162.8)",
+          "oklch(60.7% 0.132 162.8)",
+          "oklch(72.1% 0.132 162.8)",
+          "oklch(83.6% 0.132 162.8)",
+          "oklch(95% 0.132 162.8)"
+        ]
+      },
+      "dark-series-4-ochre": {
+        "role": "secondary",
+        "displayName": "Dark Ochre (series 4)",
+        "canonical": "#c98500",
+        "oklch": "oklch(67% 0.143 73.2)",
+        "tonalRamp": [
+          "oklch(15% 0.143 73.2)",
+          "oklch(26.4% 0.143 73.2)",
+          "oklch(37.9% 0.143 73.2)",
+          "oklch(49.3% 0.143 73.2)",
+          "oklch(60.7% 0.143 73.2)",
+          "oklch(72.1% 0.143 73.2)",
+          "oklch(83.6% 0.143 73.2)",
+          "oklch(95% 0.143 73.2)"
+        ]
+      },
+      "dark-series-5-magenta": {
+        "role": "secondary",
+        "displayName": "Dark Magenta (series 5)",
+        "canonical": "#d55181",
+        "oklch": "oklch(62.2% 0.171 0.8)",
+        "tonalRamp": [
+          "oklch(15% 0.15 0.8)",
+          "oklch(26.4% 0.15 0.8)",
+          "oklch(37.9% 0.15 0.8)",
+          "oklch(49.3% 0.15 0.8)",
+          "oklch(60.7% 0.15 0.8)",
+          "oklch(72.1% 0.15 0.8)",
+          "oklch(83.6% 0.15 0.8)",
+          "oklch(95% 0.15 0.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Article title only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Home lead piece; page heads use a near-identical clamp."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Prose h2."
+      },
+      "feed-title": {
+        "displayName": "Feed Title",
+        "purpose": "One headline per feed row."
+      },
+      "dek": {
+        "displayName": "Dek",
+        "purpose": "Standfirst under titles, ink 2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose at the 42.5rem measure, optical sizing on."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Navigation and action links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Meta lines, dates, topic row; tabular figures."
+      },
+      "table": {
+        "displayName": "Table",
+        "purpose": "All tables; tabular lining figures."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Figcaptions, exhibit sub-titles, sources, notes, legends, contents rail."
+      }
+    },
+    "shadows": [
+      {
+        "name": "chart-tooltip",
+        "value": "0 4px 14px rgb(0 0 0 / 0.14)",
+        "purpose": "The only shadow: the transient inverted tooltip over a chart."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "The single house easing for every transition."
+      },
+      {
+        "name": "state-fast",
+        "value": "120ms",
+        "purpose": "Chart tooltip fade and rise."
+      },
+      {
+        "name": "state",
+        "value": "160ms",
+        "purpose": "Link colour and underline, contents rail, chart mark dimming, disclosure chevron."
+      },
+      {
+        "name": "nudge",
+        "value": "200ms",
+        "purpose": "Action-link icon nudge on hover."
+      },
+      {
+        "name": "title-morph",
+        "value": "280ms",
+        "purpose": "Cross-document view transition morphing a piece title from feed row to article heading; disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "34rem",
+        "purpose": "Max-width: feed date stacks, meta separators drop, pager stacks, narrow chart render, sticky first-column rule."
+      },
+      {
+        "name": "rail",
+        "value": "78rem",
+        "purpose": "Min-width: On this page contents rail appears (pieces with three or more h2s)."
+      }
+    ],
+    "chartSeries": {
+      "order": [
+        "blue",
+        "copper",
+        "aqua",
+        "ochre",
+        "magenta",
+        "green",
+        "violet",
+        "red"
+      ],
+      "light": [
+        "#1d5cc0",
+        "#c8602e",
+        "#1a9a6c",
+        "#d39200",
+        "#c9577f",
+        "#008300",
+        "#6250d6",
+        "#e34948"
+      ],
+      "dark": [
+        "#4a8ae6",
+        "#d9602c",
+        "#1fa575",
+        "#c98500",
+        "#d55181",
+        "#008300",
+        "#9085e9",
+        "#e66767"
+      ],
+      "waterfall": {
+        "light": {
+          "up": "#1d5cc0",
+          "down": "#c8602e",
+          "total": "#5b6169"
+        },
+        "dark": {
+          "up": "#4a8ae6",
+          "down": "#d9602c",
+          "total": "#8e959e"
+        }
+      },
+      "validation": "Slot 1 equals the link accent in each scheme. Slots 2-5 passed the dataviz validator (lightness band, chroma floor, CVD and normal-vision delta E) in light and dark. A neutral grey ramp was tested and failed."
+    }
+  },
+  "components": [
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Ledger blue link with a soft 1px underline that goes solid on hover.",
+      "html": "<p class=\"ds-prose\">The terminal value carries <a class=\"ds-link\" href=\"#\">most of the valuation</a> in a long-duration business.</p>",
+      "css": ".ds-prose { font: 400 1.1875rem/1.65 var(--serif, 'Source Serif 4 Variable', Georgia, serif); color: var(--ink, #15171a); } .ds-link { color: var(--accent, #1d5cc0); text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--accent, #1d5cc0) 40%, transparent); transition: text-decoration-color 160ms cubic-bezier(0.23,1,0.32,1), color 160ms cubic-bezier(0.23,1,0.32,1); } .ds-link:hover { color: var(--accent-ink, #164a9c); text-decoration-color: currentColor; } .ds-link:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Mark and wordmark left, Topics and About right, above a hairline; current page gets a 1.5px ink underline.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"#\"><svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path class=\"ds-mark-curve\" d=\"M4.5 26.5C13.5 26.5 20.5 21.5 24 10.5\" fill=\"none\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><circle class=\"ds-mark-dot\" cx=\"25.2\" cy=\"7.6\" r=\"3.4\"/></svg>Moving Curve</a><nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Topics</a><a href=\"#\">About</a></nav></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; padding: 0 1.5rem; border-bottom: 1px solid var(--rule, #e4e6e9); background: var(--bg, #fff); } .ds-brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink, #15171a); text-decoration: none; font: 680 1.4rem/1 var(--serif, 'Source Serif 4 Variable', Georgia, serif); letter-spacing: -0.02em; } .ds-brand svg { width: 1.9rem; height: 1.9rem; margin-top: -0.2rem; } .ds-mark-curve { stroke: var(--ink, #15171a); } .ds-mark-dot { fill: var(--accent, #1d5cc0); } .ds-nav { display: flex; gap: 1.5rem; font: 500 0.9375rem/1 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); } .ds-nav a { color: var(--ink-2, #464b53); text-decoration: none; padding: 0.5rem 0; } .ds-nav a:hover { color: var(--ink, #15171a); } .ds-nav a[aria-current='page'] { color: var(--ink, #15171a); box-shadow: inset 0 -1.5px 0 var(--ink, #15171a); } .ds-nav a:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Action Link",
+      "kind": "button",
+      "refersTo": "action-link",
+      "description": "The system has no filled buttons; primary actions are sans 600 links with a trailing stroke icon that nudges on hover.",
+      "html": "<a class=\"ds-action\" href=\"#\">Read the piece <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-action { display: inline-flex; align-items: center; gap: 0.4rem; font: 600 0.9375rem/1 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--accent, #1d5cc0); text-decoration: none; } .ds-action svg { width: 1rem; height: 1rem; transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-action:hover { color: var(--accent-ink, #164a9c); } .ds-action:hover svg { transform: translateX(3px); } .ds-action:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Feed Row",
+      "kind": "custom",
+      "refersTo": "feed-row",
+      "description": "Dated ruled row: tabular date column, serif title, ink-2 summary, sans meta line.",
+      "html": "<ul class=\"ds-feed\"><li><time>Oct 14</time><div><h4><a href=\"#\">What the terminal value is really pricing</a></h4><p>A DCF is mostly a bet on year eleven onward. Here is how to read it.</p><div class=\"ds-meta\"><span>9 min read</span><span class=\"ds-sep\">&middot;</span><span>Valuation</span><span class=\"ds-sep\">&middot;</span><span class=\"ds-flag\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M4 9.5h16M4 14.75h16M9.5 9.5V20\"/></svg>Model</span></div></div></li></ul>",
+      "css": ".ds-feed { list-style: none; margin: 0; padding: 0; } .ds-feed li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0 1.5rem; padding: 1.35rem 0; border-bottom: 1px solid var(--rule, #e4e6e9); } .ds-feed time { font: 400 0.875rem/1.9 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--muted, #6a7079); font-variant-numeric: tabular-nums; } .ds-feed h4 { margin: 0 0 0.3rem; font: 640 1.3125rem/1.25 var(--serif, 'Source Serif 4 Variable', Georgia, serif); letter-spacing: -0.012em; } .ds-feed h4 a { color: var(--ink, #15171a); text-decoration: none; } .ds-feed h4 a:hover { color: var(--accent-ink, #164a9c); } .ds-feed h4 a:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; } .ds-feed p { margin: 0 0 0.55rem; font: 400 1.0625rem/1.5 var(--serif, 'Source Serif 4 Variable', Georgia, serif); color: var(--ink-2, #464b53); } .ds-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.9rem; font: 400 0.8125rem/1.5 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--muted, #6a7079); font-variant-numeric: tabular-nums; } .ds-sep { color: var(--rule-2, #cfd3d8); } .ds-flag { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--ink-2, #464b53); font-weight: 500; } .ds-flag svg { width: 0.95rem; height: 0.95rem; color: var(--accent, #1d5cc0); }"
+    },
+    {
+      "name": "Topic Row",
+      "kind": "chip",
+      "refersTo": "nav-link-active",
+      "description": "Tags are plain sans links in a row, not chips; the current tag is ink 600 with a 1.5px underline.",
+      "html": "<ul class=\"ds-topics\"><li>Topics:</li><li><a href=\"#\" aria-current=\"page\">Valuation</a></li><li><a href=\"#\">LBO</a></li><li><a href=\"#\">Filings</a></li></ul>",
+      "css": ".ds-topics { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1rem; margin: 0; padding: 0; list-style: none; font: 400 0.875rem/1.5 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--muted, #6a7079); } .ds-topics a { color: var(--ink-2, #464b53); text-decoration: none; } .ds-topics a:not([aria-current]):hover { color: var(--accent, #1d5cc0); } .ds-topics a[aria-current='page'] { color: var(--ink, #15171a); font-weight: 600; box-shadow: inset 0 -1.5px 0 var(--ink, #15171a); } .ds-topics a:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Model Attachment Row",
+      "kind": "custom",
+      "refersTo": "model-row",
+      "description": "A ruled row, not a card: blue sheet icon, model name, muted note, Download action.",
+      "html": "<div class=\"ds-model\"><div class=\"ds-what\"><strong><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><path d=\"M4 9.5h16M4 14.75h16M9.5 9.5V20\"/></svg>DCF model (xlsx)</strong><span class=\"ds-note\">Three-statement build with terminal value sensitivity.</span></div><a class=\"ds-get\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10.5l5 5 5-5M5 19.5h14\"/></svg>Download</a></div>",
+      "css": ".ds-model { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 1.25rem; padding: 0.9rem 0; border-top: 1px solid var(--rule, #e4e6e9); border-bottom: 1px solid var(--rule, #e4e6e9); font-family: var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); } .ds-what { flex: 1 1 18rem; min-width: 0; } .ds-model strong { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.9375rem; font-weight: 600; color: var(--ink, #15171a); line-height: 1.4; } .ds-model strong svg { width: 1.05rem; height: 1.05rem; color: var(--accent, #1d5cc0); } .ds-note { display: block; margin-top: 0.15rem; font-size: 0.8125rem; color: var(--muted, #6a7079); line-height: 1.45; } .ds-get { display: inline-flex; align-items: center; gap: 0.35rem; font: 600 0.9375rem/1.4 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--accent, #1d5cc0); text-decoration: none; } .ds-get svg { width: 1rem; height: 1rem; transition: transform 200ms cubic-bezier(0.23,1,0.32,1); } .ds-get:hover { color: var(--accent-ink, #164a9c); } .ds-get:hover svg { transform: translateY(2px); } .ds-get:focus-visible { outline: 2px solid var(--accent, #1d5cc0); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Exhibit Table",
+      "kind": "custom",
+      "refersTo": "exhibit",
+      "description": "Numbered exhibit caption over a ruled ledger table: tabular figures, right-aligned numbers, ink-ruled total row, muted source line.",
+      "html": "<figure class=\"ds-exhibit\"><p class=\"ds-ex-head\"><span class=\"ds-ex-label\">Exhibit 2</span><span class=\"ds-ex-title\">Returns attribution</span><span class=\"ds-ex-sub\">USD millions</span></p><table class=\"ds-table\"><thead><tr><th>Driver</th><th class=\"num\">Value</th><th class=\"num\">Share</th></tr></thead><tbody><tr><th>EBITDA growth</th><td class=\"num\">412</td><td class=\"num\">58%</td></tr><tr><th>Multiple expansion</th><td class=\"num\">186</td><td class=\"num\">26%</td></tr><tr><th>Deleveraging</th><td class=\"num\">114</td><td class=\"num\">16%</td></tr><tr class=\"total\"><th>Total</th><td class=\"num\">712</td><td class=\"num\">100%</td></tr></tbody></table><p class=\"ds-ex-source\">Source: sample data.</p></figure>",
+      "css": ".ds-exhibit { margin: 0; font-family: var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); } .ds-ex-head { margin: 0 0 0.85rem; font: 400 0.9375rem/1.4 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--ink, #15171a); } .ds-ex-label { font-weight: 650; margin-right: 0.5rem; font-variant-numeric: tabular-nums; } .ds-ex-title { font-weight: 500; } .ds-ex-sub { display: block; margin-top: 0.15rem; font-size: 0.8125rem; color: var(--muted, #6a7079); } .ds-table { width: 100%; border-collapse: collapse; font: 400 0.875rem/1.45 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); font-variant-numeric: tabular-nums lining-nums; } .ds-table thead th { text-align: left; vertical-align: bottom; font-weight: 600; color: var(--ink, #15171a); padding: 0 0.75rem 0.5rem; border-bottom: 1px solid var(--ink, #15171a); } .ds-table td, .ds-table tbody th { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule, #e4e6e9); text-align: left; font-weight: 400; color: var(--ink, #15171a); } .ds-table th:first-child, .ds-table td:first-child { padding-left: 0; } .ds-table th:last-child, .ds-table td:last-child { padding-right: 0; } .ds-table .num { text-align: right; white-space: nowrap; } .ds-table tr.total th, .ds-table tr.total td { font-weight: 650; border-top: 1px solid var(--ink, #15171a); } .ds-table tbody tr:hover td, .ds-table tbody tr:hover th { background: var(--bg-2, #f6f7f8); } .ds-ex-source { margin: 0.55rem 0 0; font: 400 0.8125rem/1.5 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--muted, #6a7079); }"
+    },
+    {
+      "name": "Chart Legend and Tooltip",
+      "kind": "custom",
+      "refersTo": "chart-tooltip",
+      "description": "Legend for two or more series (stroke swatches for lines) and the inverted tooltip, the only shadowed element.",
+      "html": "<div class=\"ds-chart\"><ul class=\"ds-legend\"><li><i class=\"ds-sw ds-s1\"></i>Revenue</li><li><i class=\"ds-sw ds-s2\"></i>EBITDA</li><li><i class=\"ds-sw ds-s3\"></i>Free cash flow</li></ul><div class=\"ds-tip\"><b>2024</b>\nRevenue  1,240\nEBITDA     310</div></div>",
+      "css": ".ds-chart { position: relative; padding-bottom: 4.5rem; } .ds-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; list-style: none; margin: 0 0 0.75rem; padding: 0; font: 400 0.8125rem/1.3 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); color: var(--ink-2, #464b53); } .ds-legend li { display: inline-flex; align-items: center; gap: 0.4rem; } .ds-sw { display: inline-block; height: 2px; width: 1rem; border-radius: 1px; } .ds-s1 { background: var(--s1, #1d5cc0); } .ds-s2 { background: var(--s2, #c8602e); } .ds-s3 { background: var(--s3, #1a9a6c); } .ds-tip { position: absolute; left: 0; top: 2rem; white-space: pre; padding: 0.45rem 0.6rem; border-radius: 6px; background: var(--ink, #15171a); color: var(--bg, #fff); font: 500 0.75rem/1.45 var(--sans, 'Inter Variable', Inter, system-ui, sans-serif); font-variant-numeric: tabular-nums; box-shadow: 0 4px 14px rgb(0 0 0 / 0.14); } .ds-tip b { font-weight: 650; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Analyst's Broadsheet",
+    "overview": "Moving Curve is the independent single-author finance newsletter played straight, at the craft level of the Collaborative Fund blog and Net Interest. It does not wear a costume; it earns distinction through typographic precision. A serif reading face carries titles and body at a real measure; a workhorse sans carries everything that is apparatus (meta, navigation, tables, chart text, captions). Numbers are always tabular.\n\nThe page is white paper, near-black ink, hairline rules and one deep blue. That blue is both the link colour and the first chart series, so the reader learns one signal: blue is the author's line of argument, in prose and in data. Structure is drawn with rules, never with boxes: the feed is ruled rows, the model attachment is a ruled row, tables are ruled ledgers, the contents rail is a single left rule. Light and dark themes are the same system remapped through the same tokens.\n\nCharts, pasted tables, captioned images and captioned Markdown tables are one family: numbered exhibits with a single caption style, a source line, and accessible data behind every chart. The confirmed rejection is the off-the-shelf blog theme: stock card grids, hero banners, Medium-style chrome.",
+    "keyCharacteristics": [
+      "Serif for reading, sans for apparatus, tabular figures wherever a number appears.",
+      "One accent (ledger blue) shared by links and chart series 1.",
+      "Hairline rules instead of cards; flat surfaces; no shadows at rest.",
+      "Every chart, table and figure is a numbered \"Exhibit N\" in one shared sequence.",
+      "Light and dark from one token set, via `prefers-color-scheme`."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Ledger blue is the only accent in the interface. It marks links, the mark's dot, focus, and chart series 1; it never fills a surface or a button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Validated Series Rule",
+        "body": "Chart slots are fixed and ordered (blue, copper, aqua, ochre, magenta). Slot 1 is always the link accent; slots 2-5 passed the dataviz validator (lightness band, chroma floor, CVD and normal-vision delta E) in both schemes. Do not substitute hues, and do not use a neutral grey ramp for series: it was tested and failed the validator.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Serif is the author speaking (titles, deks, prose, quotes). Sans is the apparatus (meta, navigation, exhibits, tables, footnotes). Never set a chart label or table in serif, or a headline in sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Every number that can line up does: dates, meta, years, exhibit labels, ticks, values, tooltips and tables all use tabular numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Headings, labels and captions are sentence case at normal tracking. Hierarchy comes from weight and size, never from uppercase tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ruled Page Rule",
+        "body": "No cards, no panels, no shadows. Group with a hairline above and below; separate with whitespace. The active nav underline and active topic underline are 1.5px ink rules drawn with an inset box-shadow, which is a rule, not elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do set reading text in the serif at 1.1875rem/1.65 inside the 42.5rem measure.",
+      "Do set every number in tabular figures, and right-align numeric table columns.",
+      "Do separate content with 1px hairlines (`rule`) and reserve the ink rule for headers, totals and year dividers.",
+      "Do caption every chart, data table and figure as a numbered \"Exhibit N\" in the shared sequence, with a source line where the data has one.",
+      "Do use chart slots in their fixed order, with slot 1 equal to the link accent in each scheme.",
+      "Do give any chart with two or more series a legend, and add direct end labels on wide line charts only when they do not collide.",
+      "Do give every chart a text label and a \"View data\" table.",
+      "Do keep light and dark in step by changing tokens, never by adding per-theme components."
+    ],
+    "donts": [
+      "Don't use cards, panels or tiles to group content; use a ruled row.",
+      "Don't add shadows; the transient chart tooltip is the only exception.",
+      "Don't introduce a second accent colour in the interface, or fill buttons or surfaces with ledger blue.",
+      "Don't replace the validated series hues or use a neutral grey ramp for chart series.",
+      "Don't add uppercase tracked labels, eyebrows or kickers above headings.",
+      "Don't set tables, chart labels or meta in the serif.",
+      "Don't reach for the off-the-shelf blog theme: stock card grids, hero banners, Medium-style chrome."
+    ]
+  }
+}

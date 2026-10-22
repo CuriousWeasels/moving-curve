@@ -1,0 +1,14 @@
+---
+import { tagUrl } from '../lib/pieces';
+import { url } from '../lib/url';
+
+interface Props { tags: [string, number][]; current?: string; }
+const { tags, current } = Astro.props;
+---
+<ul class="topic-row" aria-label="Browse by topic">
+  <li>Topics:</li>
+  {current && <li><a href={url('/')}>All</a></li>}
+  {tags.map(([t]) => (
+    <li><a href={tagUrl(t)} aria-current={current === t ? 'page' : undefined}>{t}</a></li>
+  ))}
+</ul>
