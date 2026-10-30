@@ -1,36 +1,38 @@
 ---
-title: "Electronic Arts take-private: limited upside, more downside at US$210"
-dek: "At US$210 a share, my model returns 13.1% against a 20% hurdle, and only if a buyer in 2031 pays the same 22.4x EBITDA. If the exit multiple drifts towards where peers trade, the equity barely gets its money back."
+title: 'Electronic Arts take-private: limited upside, more downside at US$210'
+dek: At US$210 a share, my model returns 13.1% against a 20% hurdle, and only if a buyer in 2031 pays the same 22.4x EBITDA. If the exit multiple drifts towards where peers trade, the equity barely gets its money back.
 date: 2026-10-30
 tags:
   - LBO
   - Private equity
   - M&A
   - Valuation
+draft: false
 key_data:
-  - label: "View"
-    value: "Limited upside, more downside at US$210"
-  - label: "Offer price"
-    value: "US$210.00 (announced 29 Sep 2025)"
-  - label: "Undisturbed price"
-    value: "US$168.32 (25 Sep 2025), 24.8% premium"
-  - label: "Enterprise value"
-    value: "~US$55.0bn"
-  - label: "Funding"
-    value: "~US$36.4bn equity, US$18.0bn debt"
-  - label: "Entry EV / EBITDA"
-    value: "22.4x LTM EBITDA"
-  - label: "Leverage at close"
-    value: "7.6x EBITDA; 5.7x after Year 1"
-  - label: "Base-case IRR / MoM"
-    value: "13.1% and 1.85x over five years"
-  - label: "Hurdle"
-    value: "20% IRR and 2.5x"
-  - label: "Exit multiple for 20% IRR"
-    value: "29.6x vs peer median ~13x"
-  - label: "Buyers"
-    value: "PIF ~93.4%, Silver Lake ~5.5%, Affinity Partners ~1.1%"
+  - label: View
+    value: Limited upside, more downside at US$210
+  - label: Offer price
+    value: US$210.00 (announced 29 Sep 2025)
+  - label: Undisturbed price
+    value: US$168.32 (25 Sep 2025), 24.8% premium
+  - label: Enterprise value
+    value: ~US$55.0bn
+  - label: Funding
+    value: ~US$36.4bn equity, US$18.0bn debt
+  - label: Entry EV / EBITDA
+    value: 22.4x LTM EBITDA
+  - label: Leverage at close
+    value: 7.6x EBITDA; 5.7x after Year 1
+  - label: Base-case IRR / MoM
+    value: 13.1% and 1.85x over five years
+  - label: Hurdle
+    value: 20% IRR and 2.5x
+  - label: Exit multiple for 20% IRR
+    value: 29.6x vs peer median ~13x
+  - label: Buyers
+    value: PIF ~93.4%, Silver Lake ~5.5%, Affinity Partners ~1.1%
 ---
+
 At US$210 per share, I see the US$55bn take-private of Electronic Arts as a deal with limited upside and more downside. My base case returns a 13.1% IRR against a 20% hurdle (not the actual hurdle, just a typical target rate), and that’s only if a buyer in 2031 pays the same 22.4x EBITDA that was roughly paid for the deal. If the exit multiple drifts towards where peers trade, the equity barely gets its money back.
 
 I approached this from the perspective of someone asked whether they would back this deal at US$210.00 in September 2025. I used data available up to 30 October 2026, which let me test the thesis against what has happened since. All returns come from my own LBO model, built from scratch using EA’s filings.
@@ -47,8 +49,8 @@ Differential	1.2%	-17.3%	-18.3%	-19.6%	-21.3%
 
 ### My thesis
 
-1. **The price is the problem, not the business.** EA is a high-quality, cash-generative franchise owner. But at 22.4x EBITDA, I need a 2031 buyer to pay the same multiple just to earn 13%. A 20% IRR needs a multiple of approximately 29.6x.
-2. **Battlefield 6 proved the franchises still work, but growth has not changed.** It was the best-selling shooter of 2025 and lifted FY26 net bookings by 9%. But within two quarters, growth was back to 4%.
+1. **The issues lies in the pricing, not the business.** EA is a high-quality, cash-generative franchise owner. But at 22.4x EBITDA, I need a 2031 buyer to pay the same multiple just to earn 13%. A 20% IRR needs a multiple of approximately 29.6x.
+2. **Battlefield 6 is a hit, but isn't sustainable growth.** It was the best-selling shooter of 2025 and lifted FY26 net bookings by 9%. But within two quarters, growth was back to 4%.
 3. **Management’s plan needs a year EA has not had recently.** The plan has net bookings jumping 21% in FY28, more than twice the Battlefield 6 year. EA had grown bookings at roughly 3% a year from FY23 to FY26.
 4. **Debt cannot close the gap.** The US$18bn is already 7.6x EBITDA at close. Adding more debt barely helps at a 22.4x exit.
 
@@ -56,11 +58,11 @@ Differential	1.2%	-17.3%	-18.3%	-19.6%	-21.3%
 
 I suspect the price plays the largest role in the IRR. My operating case is not bearish. I grow revenue by 4.5% in Year 1, slowing to 2% by Year 5, and expand the EBITDA margin from 33% to 39% as costs fall back towards historical trends. That takes EBITDA from about US$2.4bn to US$3.4bn by June 2031. Even so, the deal only returns 13.1% and 1.85x.
 
-The problem is what I paid for that EBITDA. US$210 is 22.4x my LTM EBITDA, which already adds back stock-based compensation. On reported EBITDA, it is about 31x, against a peer median of 13.3x. Before the bid leaked, EA itself traded at 17.9x on my base case.
+The problem is what was paid for that EBITDA. US$210 is 22.4x my LTM EBITDA, which already adds back stock-based compensation. On reported EBITDA, it is about 31x, against a peer median of 13.3x. Before the bid leaked, EA itself traded at 17.9x on my base case.
 
 About 87% of my base-case gain comes from EBITDA growth valued at the same 22.4x on exit. Only 13% comes from paying down debt. So the IRR depends almost entirely on someone in 2031 paying the entry multiple. If the exit multiple drifts towards EA’s own undisturbed 17.9x, the IRR falls to 7.7%.
 
-### Battlefield 6 proved the franchises work, not that growth has changed
+### Battlefield 6 is a hit but isn't sustainable growth
 
 Battlefield 6 was the strongest argument for the deal. It sold over 7 million copies in three days, became the best-selling shooter of 2025, and lifted FY26 net bookings 9% to a record of roughly US$8bn. But the boost was a one-off step, not a new growth rate. In the two quarters that followed, bookings were about 4% higher than a year earlier. That is in line with EA’s usual pace (bookings grew about 3% a year over FY23–FY26), and far below the 21% jump management’s plan needs in FY28.
 
@@ -99,7 +101,7 @@ Term loan B (USD)	US$6,125m	SOFR + 3.50%, issued at 98.5	2033	Yes
 Term loan B (EUR)	€1,725m (~US$2.0bn)	Euribor + 3.50%, issued at 98.5	2033	Yes
 Senior secured notes (USD / EUR)	US$2,875m / €1,080m	7.25% / 6.25%	2033	Yes
 Senior unsecured notes	US$2,500m	8.75%	2034	No
-= Total funded	Approx. US$18.0bn	Blended: ~7%		
+= Total funded	Approx. US$18.0bn	Blended: ~7%
 ```
 
 Leverage depends on which EBITDA you use. On my basis it is 7.6x, and Moody’s put it at about 8x, according to an IFR article.
@@ -148,7 +150,7 @@ NetEase	55,832	8.6x	7.7x	7.2x
 Krafton	5,685	5.0x	4.7x	4.5x
 Take-Two	37,209	51.5x	23.2x	16.0x
 = Peer median (all eight, incl. Ubisoft and CD Projekt)		13.3x	14.7x	12.9x
-EA at US$210	~55,000	31.0x Reported 22.4x Adjusted Basis		
+EA at US$210	~55,000	31.0x Reported 22.4x Adjusted Basis
 ```
 
 One thing to note when comparing EA with this group: the peers are on reported EBITDA, which is after stock-based compensation, so the fair comparison is EA’s 31.0x, not my adjusted 22.4x.
@@ -221,7 +223,7 @@ Exit evidence	A publisher sale or peer re-rating at 20x or more	10.4% at 20x on 
 title: Table 7: My base case (US$m)
 note: Entry: US$210 per share, 22.4x LTM EBITDA, US$18bn of debt. Exit in 2031 at 22.4x. 13.1% IRR and 1.85x money.
 ---
-	Year 1 (2027)	Year 2 (2028)	Year 3 (2029)	Year 4 (2030)	Year 5 (2031)
+Year 1 (2027)	Year 2 (2028)	Year 3 (2029)	Year 4 (2030)	Year 5 (2031)
 Revenue	7,870	8,185	8,430	8,641	8,814
 Revenue growth	4.5%	4.0%	3.0%	2.5%	2.0%
 EBITDA (incl. stock-based pay add-back)	2,594	2,815	3,021	3,220	3,412
