@@ -247,28 +247,28 @@ A quick note on the model. I built it from scratch as practice for LBO modelling
 
 ## Sources
 
-1. Electronic Arts, merger announcement, 8-K Ex 99.1 (29 Sep 2025). sec.gov
-2. Electronic Arts, definitive merger proxy, DEFM14A (20 Nov 2025). sec.gov
-3. Electronic Arts, supplemental proxy disclosures, DEFA14A (15 Dec 2025). sec.gov
-4. Electronic Arts, closing 8-K, credit agreement and notes (4 Aug 2026). sec.gov
-5. Electronic Arts, Form 10-K, FY2026 (11 May 2026). sec.gov
-6. Electronic Arts, Form 10-Q, Q1 FY2027 (3 Aug 2026). sec.gov
-7. Electronic Arts, Q2 FY26 results (28 Oct 2025). sec.gov
-8. Electronic Arts, Q3 FY26 results (3 Feb 2026). sec.gov
-9. Electronic Arts, Q4 FY26 results (5 May 2026). sec.gov
-10. Electronic Arts, Q4 and FY23 results (9 May 2023). sec.gov
-11. Electronic Arts, Battlefield 6 becomes the biggest launch in franchise history (16 Oct 2025). businesswire.com
-12. Octus, Primary preview: Electronic Arts (19 Mar 2026). octus.com
-13. Octus, EA bonds land tight of price talk; US$45bn of demand (24 Mar 2026). octus.com
-14. IFR, Jumbo EA financing set to level up (Mar 2026). ifre.com
-15. PitchBook, EA launches leveraged loan backing largest LBO debt deal since the financial crisis (Mar 2026). pitchbook.com
-16. Game Developer, Saudi Arabia will own 93.4 percent of EA after buyout (3 Dec 2025). gamedeveloper.com
-17. VGC, Saudi Arabia reportedly running low on cash for investments (25 Nov 2025). videogameschronicle.com
-18. Mobilegamer.biz / Bloomberg, Saudi bosses considering merging Savvy and EA (10 Sep 2026). mobilegamer.biz
-19. AP via WDBO, Electronic Arts to cut 400 jobs, shut down BioWare studio (21 Oct 2026). wdbo.com
-20. TheSixthAxis, EA confirms layoffs for Battlefield Studios (9 Mar 2026). thesixthaxis.com
-21. Microsoft, Microsoft to acquire Activision Blizzard (18 Jan 2022). microsoft.com
-22. Dealroom, The most famous leveraged buyouts in history. dealroom.net
+1. Electronic Arts, [Merger announcement, 8-K Ex 99.1](https://www.sec.gov/Archives/edgar/data/712515/000114036125036415/ef20056167_ex99-1.htm) (29 Sep 2025). sec.gov
+2. Electronic Arts, [Definitive merger proxy, DEFM14A](https://www.sec.gov/Archives/edgar/data/712515/000114036125042872/ny20056157x2_defm14a.htm) (20 Nov 2025). sec.gov
+3. Electronic Arts, [Supplemental proxy disclosures, DEFA14A](https://www.sec.gov/Archives/edgar/data/712515/000114036125045524/ef20061216_defa14a.htm) (15 Dec 2025). sec.gov
+4. Electronic Arts, [Closing 8-K, credit agreement and notes](https://www.sec.gov/Archives/edgar/data/712515/000114036126031157/ef20079099_8k.htm) (4 Aug 2026). sec.gov
+5. Electronic Arts, [Form 10-K, FY2026](https://www.sec.gov/Archives/edgar/data/712515/000162828026033617/ea-20260331.htm) (11 May 2026). sec.gov
+6. Electronic Arts, [Form 10-Q, Q1 FY2027](https://www.sec.gov/Archives/edgar/data/712515/000162828026051829/ea-20260630.htm) (3 Aug 2026). sec.gov
+7. Electronic Arts, [Q2 FY26 results](https://www.sec.gov/Archives/edgar/data/712515/000071251525000063/earningspressrelease2025_1.htm) (28 Oct 2025). sec.gov
+8. Electronic Arts, [Q3 FY26 results](https://www.sec.gov/Archives/edgar/data/712515/000071251526000012/earningspressrelease2026_0.htm) (3 Feb 2026). sec.gov
+9. Electronic Arts, [Q4 FY26 results](https://www.sec.gov/Archives/edgar/data/0000712515/000071251526000053/earningspressrelease2026_0.htm) (5 May 2026). sec.gov
+10. Electronic Arts, [Q4 and FY23 results](https://www.sec.gov/Archives/edgar/data/712515/000071251523000021/earningspressrelease2023_0.htm) (9 May 2023). sec.gov
+11. Electronic Arts, [Battlefield 6 becomes the biggest launch in franchise history](https://www.businesswire.com/news/home/20251016418634/en/Battlefield-6-Shatters-Records-Becoming-the-Biggest-Launch-in-Franchise-History) (16 Oct 2025). businesswire.com
+12. Octus, [Primary preview: Electronic Arts](https://octus.com/resources/articles/primary-preview-electronic-arts/) (19 Mar 2026). octus.com
+13. Octus, [EA bonds land tight of price talk; US$45bn of demand](https://octus.com/resources/articles/electronic-arts-bonds-land-tight-of-price-talk-in-highly-anticipated-jpmorgan-led-syndication-lbo-debt-financing-gathers-45b-in-demand-from-investors/) (24 Mar 2026). octus.com
+14. IFR, [Jumbo EA financing set to level up](https://www.ifre.com/loans/2400524/jumbo-ea-financing-set-to-level-up) (Mar 2026). ifre.com
+15. PitchBook, [EA launches leveraged loan backing largest LBO debt deal since the financial crisis](https://pitchbook.com/news/articles/electronic-arts-launches-leveraged-loan-backing-largest-lbo-debt-deal-since-financial-crisis) (Mar 2026). pitchbook.com
+16. Game Developer, [Saudi Arabia will own 93.4 percent of EA after buyout](https://www.gamedeveloper.com/business/saudi-arabia-will-own-93-4-percent-of-ea-after-buyout) (3 Dec 2025). gamedeveloper.com
+17. VGC, [Saudi Arabia reportedly running low on cash for investments](https://www.videogameschronicle.com/news/saudi-arabia-is-reportedly-running-low-on-cash-for-investments-following-ea-deal) (25 Nov 2025). videogameschronicle.com
+18. Mobilegamer.biz / Bloomberg, [Saudi bosses considering merging Savvy and EA](https://mobilegamer.biz/saudi-bosses-are-considering-merging-savvy-and-ea-to-create-a-new-gaming-supergroup-says-bloomberg/) (10 Sep 2026). mobilegamer.biz
+19. AP via WDBO, [Electronic Arts to cut 400 jobs, shut down BioWare studio](https://www.wdbo.com/news/trending/electronic-arts-cut-400-jobs-shut-down-development-studio-bioware/KUK6GRHMBNCVXC45LB7KGMOXLU/) (21 Oct 2026). wdbo.com
+20. TheSixthAxis, [EA confirms layoffs for Battlefield Studios](https://www.thesixthaxis.com/2026/03/09/ea-confirms-layoffs-for-battlefield-studios-even-with-battlefield-6s-record-sales/) (9 Mar 2026). thesixthaxis.com
+21. Microsoft, [Microsoft to acquire Activision Blizzard](https://news.microsoft.com/2022/01/18/microsoft-to-acquire-activision-blizzard-to-bring-the-joy-and-community-of-gaming-to-everyone-across-every-device/) (18 Jan 2022). microsoft.com
+22. Dealroom, [The most famous leveraged buyouts in history](https://dealroom.net/blog/the-most-famous-leveraged-buyouts-in-history). dealroom.net
 
 Peer multiples come from my own trading comps workbook, built from company filings, Yahoo Finance prices and MarketScreener consensus. All IRRs come from my LBO model and copies of it with only input cells changed.
 
