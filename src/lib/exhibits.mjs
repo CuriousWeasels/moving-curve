@@ -59,6 +59,7 @@ export function toNumber(raw) {
   if (!s || s === '-' || s === '–' || /^n\.?a\.?$/i.test(s)) return NaN;
   let neg = false;
   if (/^\(.*\)$/.test(s)) { neg = true; s = s.slice(1, -1); }
+  s = s.replace(/^[~≈]\s*/, ''); // approximate values: ~31.2
   s = s.replace(/^[A-Z]{2,3}\s*(?=[$€£¥\d])/, ''); // currency codes: US$, CHF, HK$
   s = s.replace(/[$€£¥,%x×\s]/gi, '').replace(/[a-z]+$/i, '').replace(/^[−–]/, '-');
   const n = Number(s);
